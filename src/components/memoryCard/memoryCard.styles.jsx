@@ -4,6 +4,7 @@ export const Root = styled.div`
     box-shadow: 0 7px 10px #abacad;
     border-radius: 20px;
     cursor: pointer;
+    background-color: white;
 
     &:hover img { 
         transform: scale(1.5);

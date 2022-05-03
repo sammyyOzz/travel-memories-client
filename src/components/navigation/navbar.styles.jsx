@@ -9,6 +9,7 @@ export const Root = styled.div`
     align-items: center;
     box-sizing: border-box;
     padding: 0 20px;
+    z-index: 1000;
 `
 
 export const Title = styled.div`

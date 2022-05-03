@@ -1,10 +1,10 @@
 import * as Styles from './button.styles'
 
 
-export function Button ({ children }) {
+export function Button ({ children, ...props }) {
 
     return (
-        <Styles.Root>
+        <Styles.Root { ...props }>
             { children }
         </Styles.Root>
     )

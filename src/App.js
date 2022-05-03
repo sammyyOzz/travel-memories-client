@@ -5,6 +5,7 @@ import { ListMemories } from './components/listMemories/listMemories.component';
 import { selectMemories } from './redux/memories/memories.selectors';
 import * as Styles from './App.styles'
 import { Navbar } from './components/navigation/navbar.component';
+import { Form, FormControl } from './components/form/form.component';
 
 function App() {
   /**
@@ -22,7 +23,15 @@ function App() {
           </Styles.GridLeft>
 
           <Styles.GridRight>
-            right grid
+            <Styles.FormContainer>
+              <Styles.FormTitle>Post New Memories</Styles.FormTitle>
+
+              <Form>
+                <FormControl label="Username"  />
+                <FormControl label="Title" />
+                <FormControl label="Description" />
+              </Form>
+            </Styles.FormContainer>
           </Styles.GridRight>
         </Styles.GridContainer>
       </Styles.Container>
