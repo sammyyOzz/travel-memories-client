@@ -38,3 +38,9 @@ export const FormContainer = styled.div`
     border-radius: 20px;
     background-color: white;
 `
+
+export const ImageName = styled.p`
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+`

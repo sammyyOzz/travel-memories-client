@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Label = styled.label`
     font-size: 18px;
@@ -6,7 +6,7 @@ export const Label = styled.label`
     font-weight: 500;
 `
 
-export const Input = styled.input`
+const inputAndTextareaStyle = css`
     box-sizing: border-box;
     width: 100%;
     height: 40px;
@@ -20,6 +20,16 @@ export const Input = styled.input`
         outline: none;
         border: 3px solid black;
     }
+`
+
+export const Input = styled.input`
+    ${inputAndTextareaStyle}
+`
+
+export const Textarea = styled.textarea`
+    ${inputAndTextareaStyle}
+    height: 100px;
+    padding: 5px 8px;
 `
 
 export const Form = styled.form`
