@@ -7,7 +7,7 @@ export const Root = styled.div`
 
     &:hover img { 
         transform: scale(1.5);
-        transition: 700ms linear all;
+        transition: 1000ms linear all;
     }
 `
 
@@ -22,7 +22,7 @@ export const Image = styled.img`
     height: 100%;
     width: 100%;
     object-fit: cover;
-    transition: 500ms linear all;
+    transition: 1000ms linear all;
 `
 
 export const Place = styled.h2`
