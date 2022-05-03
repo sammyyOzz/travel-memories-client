@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import './App.css';
+import { ListMemories } from './components/listMemories/listMemories.component';
+import { selectMemories } from './redux/memories/memories.selectors';
 
 function App() {
+  /**
+   * selectors
+   */
+  const memories = useSelector(selectMemories)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <ListMemories memories={memories} />
+
     </div>
   );
 }

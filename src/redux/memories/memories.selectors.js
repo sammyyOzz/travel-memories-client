@@ -1,0 +1,1 @@
+export const selectMemories = state => state.memories.memories
