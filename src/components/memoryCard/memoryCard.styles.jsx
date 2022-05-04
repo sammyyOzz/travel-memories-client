@@ -5,6 +5,7 @@ export const Root = styled.div`
     border-radius: 20px;
     cursor: pointer;
     background-color: white;
+    position: relative;
 
     &:hover img { 
         transform: scale(1.5);
@@ -32,8 +33,17 @@ export const Place = styled.h2`
 `
 
 export const Description = styled.div`
-    padding: 10px 20px 30px 20px;
+    padding: 10px 20px 40px 20px;
     box-sizing: border-box;
     border-radius: 0 0 20px 20px;
     color: #383838;
+`
+
+export const Footer = styled.div`
+    font-size: 14px;
+    color: #a39e9e;
+    /* margin: 10px 20px; */
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
 `

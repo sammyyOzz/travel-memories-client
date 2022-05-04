@@ -10,13 +10,16 @@ const memoriesSlice = createSlice({
     },
     
     reducers: {
-        
+        addNewMemory(state, { payload }) {
+            const previousMemories = state.memories
+            state.memories = [payload, ...previousMemories]
+        }
     },
 
     // extraReducers: {
     // }
 })
 
-export const {  } = memoriesSlice.actions
+export const { addNewMemory } = memoriesSlice.actions
 
 export default memoriesSlice.reducer
