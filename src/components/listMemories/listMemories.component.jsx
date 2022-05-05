@@ -3,8 +3,8 @@ import { MemoryCard } from '../memoryCard/memoryCard.component'
 import * as Styles from './listMemories.styles'
 
 
-export function ListMemories({ memories }) {
-
+export const ListMemories = React.memo(({ memories }) => {
+    
     return (
         <Styles.Root>
             { memories.map(memory => (
@@ -12,4 +12,4 @@ export function ListMemories({ memories }) {
             ))}
         </Styles.Root>
     )
-}
+})
