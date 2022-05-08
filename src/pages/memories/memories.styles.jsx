@@ -4,9 +4,6 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     padding: 50px 0;
-    background-image: url("https://media.istockphoto.com/photos/vector-hexagons-pattern-geometric-abstract-background-with-simple-picture-id1307794659?b=1&k=20&m=1307794659&s=170667a&w=0&h=8utxIGEIgxxX_rUGxa5DtS7MQIaCHvQjt1eBrU28lEg=");
-    background-size: cover;
-    
 `
 
 export const Title = styled.h1`
@@ -25,7 +22,7 @@ export const GridContainer = styled.div`
     width: 80%;
     position: relative;
 
-    @media(max-width: 900px) {
+    @media(max-width: ${p => p.theme.breakpoints.md}) {
         flex-direction: column;
     }
 `
@@ -33,7 +30,7 @@ export const GridContainer = styled.div`
 export const GridLeft = styled.div`
     width: calc(70% - 20px);
 
-    @media(max-width: 900px) {
+    @media(max-width: ${p => p.theme.breakpoints.md}) {
         width: 100%;
     }
 `
@@ -41,7 +38,7 @@ export const GridLeft = styled.div`
 export const GridRight = styled.div`
     width: 30%;
 
-    @media(max-width: 900px) {
+    @media(max-width: ${p => p.theme.breakpoints.md}) {
         width: 100%;
         margin-top: 50px;
     }

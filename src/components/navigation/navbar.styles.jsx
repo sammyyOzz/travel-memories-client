@@ -10,6 +10,7 @@ export const Root = styled.div`
     box-sizing: border-box;
     padding: 0 20px;
     z-index: 1000;
+    background-image: none;
 `
 
 export const Title = styled.div`
