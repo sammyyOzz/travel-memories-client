@@ -19,4 +19,11 @@ export const Root = styled.button`
         color: white;
         transition: 250ms linear all;
     }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background-color: #d4d1d1;
+        color: gray;
+    }
 `
