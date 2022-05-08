@@ -18,3 +18,11 @@ export const Title = styled.div`
     text-transform: uppercase;
     font-style: italic;
 `
+
+export const Login = styled.div`
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 100px;
+    cursor: pointer;
+    color: black;
+`

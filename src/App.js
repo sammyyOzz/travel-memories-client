@@ -1,38 +1,24 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import './App.css';
-import { ListMemories } from './components/listMemories/listMemories.component';
-import { selectMemories } from './redux/memories/memories.selectors';
-import * as Styles from './App.styles'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 import { Navbar } from './components/navigation/navbar.component';
-import { NewMemoryForm } from './components/newMemoryForm/newMemoryForm.component';
+
+import Memories from './pages/memories/memories.component';
+import Auth from './pages/auth/auth.component';
 
 
 function App() {
-  /***********************************************************************
-   * selectors
-   ***********************************************************************/
-  const memories = useSelector(selectMemories)
-
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <Styles.Container>
-    
-        <Styles.GridContainer>
-          <Styles.Title>Memories Gallery</Styles.Title>
 
-          <Styles.GridLeft>
-            <ListMemories memories={memories} />
-          </Styles.GridLeft>
-
-          <Styles.GridRight>
-            <NewMemoryForm />
-          </Styles.GridRight>
-        </Styles.GridContainer>
-      </Styles.Container>
-    </>
+      <Routes>
+        <Route path="/" element={<Navigate to="/memories" />} />
+        <Route path="/memories" element={<Memories />} />
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
