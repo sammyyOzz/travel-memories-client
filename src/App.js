@@ -15,8 +15,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Navigate to="/memories" />} />
-        <Route path="/memories" element={<Memories />} />
-        <Route path="/auth" element={<Auth />} />
+        <Route index path="memories" element={<Memories />} />
+        <Route path="auth" element={<Auth />} />
       </Routes>
     </BrowserRouter>
   );
