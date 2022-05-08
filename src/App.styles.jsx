@@ -26,7 +26,7 @@ export const GridContainer = styled.div`
     position: relative;
 
     @media(max-width: 900px) {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 `
 
@@ -43,24 +43,6 @@ export const GridRight = styled.div`
 
     @media(max-width: 900px) {
         width: 100%;
+        margin-top: 50px;
     }
-`
-
-export const FormTitle = styled.h2`
-    color: black;
-`
-
-export const FormContainer = styled.div`
-    box-sizing: border-box;
-    padding: 30px 25px;
-    box-shadow: 0 7px 10px #abacad;
-    border-radius: 20px;
-    background-color: white;
-    margin-bottom: 50px;
-`
-
-export const ImageName = styled.p`
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 `
