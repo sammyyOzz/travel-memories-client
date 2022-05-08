@@ -13,19 +13,20 @@ function Memories() {
     const memories = useSelector(selectMemories)
 
     return (
-        <Styles.Container>
-            <Styles.GridContainer>
+        <Styles.Root>
+            <Styles.Container>
                 <Styles.Title>Memories Gallery</Styles.Title>
+                <Styles.GridContainer>
+                    <Styles.GridLeft>
+                        <ListMemories memories={memories} />
+                    </Styles.GridLeft>
 
-                <Styles.GridLeft>
-                    <ListMemories memories={memories} />
-                </Styles.GridLeft>
-
-                <Styles.GridRight>
-                    <NewMemoryForm />
-                </Styles.GridRight>
-            </Styles.GridContainer>
-      </Styles.Container>
+                    <Styles.GridRight>
+                        <NewMemoryForm />
+                    </Styles.GridRight>
+                </Styles.GridContainer>
+            </Styles.Container>
+      </Styles.Root>
     )
 }
 

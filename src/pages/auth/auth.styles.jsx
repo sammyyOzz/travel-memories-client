@@ -29,3 +29,16 @@ export const FormContainer = styled.div`
 export const Title = styled.h1`
     text-align: center;
 `
+
+export const Footer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    
+`
+
+export const FooterElement = styled.div`
+    cursor: pointer;
+    text-decoration: underline;
+`

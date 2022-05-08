@@ -23,7 +23,7 @@ export const Title = styled.div`
 export const Login = styled.div`
     font-size: 22px;
     font-weight: bold;
-    margin-right: 100px;
+    margin-right: 50px;
     cursor: pointer;
     color: black;
 `
