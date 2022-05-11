@@ -1,11 +1,19 @@
 import React from 'react'
 import * as Styles from './button.styles'
+import { css } from "@emotion/react";
+import ClipLoader from "react-spinners/ClipLoader";
 
-export function Button ({ children, ...props }) {
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
+
+export function Button ({ children, loading, ...props }) {
 
     return (
-        <Styles.Root { ...props }>
-            { children }
+        <Styles.Root disabled={loading} { ...props }>
+            { !loading ?  children : <ClipLoader Loader="PacmanLoader" size={25} />}
         </Styles.Root>
     )
 }

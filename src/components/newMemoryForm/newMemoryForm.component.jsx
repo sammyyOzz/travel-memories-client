@@ -5,11 +5,18 @@ import { Form, FormControl } from '../form/form.component'
 import * as Styles from './newMemoryForm.styles'
 
 import { addNewMemory } from '../../redux/memories/memories.slice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLoggedInUser } from '../../redux/auth/auth.selectors'
 
 
 export function NewMemoryForm() {
-    const defaultMemory = { id: Date.now(), username: "", place: "", description: "", url: "" }
+    const defaultMemory = { id: Date.now(), place: "", description: "", url: "" }
+
+    /***********************************************************************
+     * selectors
+     ***********************************************************************/
+    const { data: userData } = useSelector(selectLoggedInUser)
+
 
     /***********************************************************************
      * dispatch
@@ -54,7 +61,7 @@ export function NewMemoryForm() {
             setNoImageError("")
         }
 
-        _addNewMemory({ ...newMemory, url: URL.createObjectURL(newMemory.url) })
+        _addNewMemory({ ...newMemory, name: userData?.name, url: URL.createObjectURL(newMemory.url) })
         setNewMemory(defaultMemory)
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     }
@@ -64,13 +71,6 @@ export function NewMemoryForm() {
             <Styles.Title>Post New Memories</Styles.Title>
 
             <Form handleSubmit={handleSubmit}>
-                <FormControl 
-                  label="Username" 
-                  name="username" 
-                  value={newMemory.username}
-                  handleChange={handleInputChange} 
-                  required  
-                />
                 <FormControl 
                   label="Place" 
                   name="place" 

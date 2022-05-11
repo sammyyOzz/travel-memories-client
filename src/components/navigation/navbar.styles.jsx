@@ -27,3 +27,21 @@ export const Login = styled.div`
     cursor: pointer;
     color: black;
 `
+
+export const NameContainer = styled.div`
+    position: relative;
+
+    & > .navbar-logout-button {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        color: red;
+    }
+`
+
+export const Name = styled.div`
+    width: 150px;
+    cursor: pointer;
+    font-weight: bold;
+
+`

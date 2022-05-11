@@ -42,3 +42,8 @@ export const FooterElement = styled.div`
     cursor: pointer;
     text-decoration: underline;
 `
+
+export const Error = styled.p`
+    color: red;
+    font-size: 14px;
+`

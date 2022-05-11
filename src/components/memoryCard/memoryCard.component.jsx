@@ -2,7 +2,7 @@ import React from 'react';
 import * as Styles from './memoryCard.styles'
 
 
-export function MemoryCard({ url, place, description, username }) {
+export function MemoryCard({ url, place, description, name }) {
 
     return (
         <Styles.Root>
@@ -11,7 +11,7 @@ export function MemoryCard({ url, place, description, username }) {
             </Styles.ImageContainer>
             <Styles.Place>{ place }</Styles.Place>
             <Styles.Description>{ description }</Styles.Description>
-            <Styles.Footer>{ `--${username}--` }</Styles.Footer>
+            <Styles.Footer>{ `--${name}--` }</Styles.Footer>
         </Styles.Root>
     )
 }

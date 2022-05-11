@@ -6,12 +6,27 @@ import { Button } from '../../components/button/button.component'
 
 import { emailPattern, passwordPattern } from '../../utils/constants/auth.constant'
 
+import { useDispatch, useSelector } from 'react-redux' 
+import { loginUser, signupUser } from '../../redux/auth/auth.slice'
+import { selectLoggedInUser } from '../../redux/auth/auth.selectors'
+import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
+
+import { useNavigate } from 'react-router-dom'
+ 
 
 function Auth() {
+    const navigate = useNavigate()
+
+    /***********************************************************************
+     * selectors
+     ***********************************************************************/
+    const { status, error } = useSelector(selectLoggedInUser)
+
+
     /***********************************************************************
      * state
      ***********************************************************************/
-    const [formData, setFormData] = useState({ username: '', email: '', password: '', confirmPassword: '' })
+    const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '' })
     const [errors, setErrors] = useState({ email: '', password: '', confirmPassword: '' })
     const [isSignup, setIsSignup] = useState(true)
 
@@ -19,12 +34,21 @@ function Auth() {
         ? !errors.email && !errors.password && !errors.confirmPassword
         : !errors.email && !errors.password
 
+    
+    /***********************************************************************
+     * dispatch
+     ***********************************************************************/
+    const dispatch = useDispatch()
+
+    const _loginUser = userData => dispatch(loginUser(userData)).unwrap().then(() => navigate('/'))
+    const _signupUser = userData => dispatch(signupUser(userData)).unwrap().then(() => navigate('/'))
+
 
     /***********************************************************************
      * hooks
      ***********************************************************************/
     useEffect(() => {
-        setFormData({ username: '', email: '', password: '', confirmPassword: '' })
+        setFormData({ name: '', email: '', password: '', confirmPassword: '' })
         setErrors({ email: '', password: '', confirmPassword: '' })
     }, [isSignup])
 
@@ -69,7 +93,11 @@ function Auth() {
 
         if (!formIsValid) return
 
-        alert('submitted')
+        if (isSignup) {
+            _signupUser(formData)
+        } else {
+            _loginUser(formData)
+        }
     }
 
     return (
@@ -77,13 +105,14 @@ function Auth() {
             <Styles.FormContainer>
                 <Styles.Title>{ isSignup ? 'Sign Up' : 'Login' }</Styles.Title>
 
+                <Styles.Error>{ error?.message }</Styles.Error>
                 <Form handleSubmit={handleSubmit}>
                     { isSignup && (
                     <FormControl 
-                        label="Username"
-                        name="username"
+                        label="Name"
+                        name="name"
                         type="text"
-                        value={formData.username}
+                        value={formData.name}
                         handleChange={handleChange}
                         required
                     />)}
@@ -118,7 +147,7 @@ function Auth() {
                         error={errors.confirmPassword}
                         required
                     />)}
-                    <Button fullWidth>{ isSignup ? 'Sign Up' : 'Login' }</Button>
+                    <Button fullWidth loading={status === HTTP_STATUS.PENDING}>{ isSignup ? 'Sign Up' : 'Login' }</Button>
                 </Form>
                 <Styles.Footer>
                     <Styles.FooterElement onClick={handleSignupToggle}>{ !isSignup ? 'Sign Up' : 'Login' }</Styles.FooterElement>
