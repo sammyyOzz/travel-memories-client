@@ -6,11 +6,17 @@ import * as Styles from './newMemoryForm.styles'
 
 import { saveMemory } from '../../redux/memories/memories.slice'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectLoggedInUser } from '../../redux/auth/auth.selectors'
+import { selectSaveMemory } from '../../redux/memories/memories.selectors'
+import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
 
 
 export function NewMemoryForm() {
     const defaultMemory = { place: "", description: "", image: "" }
+
+    /***********************************************************************
+     * selectors
+     ***********************************************************************/
+    const { status } = useSelector(selectSaveMemory)
 
     /***********************************************************************
      * dispatch
@@ -95,7 +101,14 @@ export function NewMemoryForm() {
                 <Button type="button" onClick={handleUploadImageButtonClick}>Upload Image</Button>
                 { newMemory.image.name && <Styles.ImageName>{newMemory.image.name}</Styles.ImageName> }
                 { noImageError && <Styles.ImageName style={{ color: 'red' }}>{noImageError}</Styles.ImageName> }
-                <Button type="submit" fullWidth>Save Memory</Button>
+                
+                <Button 
+                    fullWidth 
+                    type="submit" 
+                    loading={status === HTTP_STATUS.PENDING}
+                >
+                    Save Memory
+                </Button>
               </Form>
         </Styles.Root>
     )

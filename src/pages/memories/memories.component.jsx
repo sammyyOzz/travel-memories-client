@@ -10,6 +10,7 @@ import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
 import { getMemories } from '../../redux/memories/memories.slice';
 import { useEffect } from 'react';
 import { AnimatedPage } from '../../components/animation/animatedPage.component';
+import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant';
 
 
 function Memories() {
@@ -43,7 +44,7 @@ function Memories() {
                     <Styles.Title>Memories Gallery</Styles.Title>
                     <Styles.GridContainer>
                         <Styles.GridLeft style={{ width: !userData?._id && '100%' }}>
-                            <ListMemories memories={memories} />
+                            <ListMemories memories={memories} loading={status === HTTP_STATUS.PENDING} />
                         </Styles.GridLeft>
 
                         <Styles.GridRight style={{ display: !userData?._id && 'none' }}>
