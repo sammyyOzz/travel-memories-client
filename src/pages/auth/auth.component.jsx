@@ -12,6 +12,7 @@ import { selectLoggedInUser } from '../../redux/auth/auth.selectors'
 import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
 
 import { useNavigate } from 'react-router-dom'
+import { AnimatedPage } from '../../components/animation/animatedPage.component'
  
 
 function Auth() {
@@ -101,60 +102,62 @@ function Auth() {
     }
 
     return (
-        <Styles.Root>
-            <Styles.FormContainer>
-                <Styles.Title>{ isSignup ? 'Sign Up' : 'Login' }</Styles.Title>
+        <AnimatedPage>
+            <Styles.Root>
+                <Styles.FormContainer>
+                    <Styles.Title>{ isSignup ? 'Sign Up' : 'Login' }</Styles.Title>
 
-                <Styles.Error>{ error?.message }</Styles.Error>
-                <Form handleSubmit={handleSubmit}>
-                    { isSignup && (
-                    <FormControl 
-                        label="Name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        handleChange={handleChange}
-                        required
-                    />)}
-                    <FormControl 
-                        label="Email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        handleChange={handleChange}
-                        onBlur={handleEmailBlur}
-                        error={errors.email}
-                        required
-                    />
-                    <FormControl 
-                        label="Password"
-                        name="password"
-                        type="password"
-                        value={formData.password}
-                        handleChange={handleChange}
-                        onBlur={handlePasswordBlur}
-                        error={errors.password}
-                        required
-                    />
-                    { isSignup && (
-                    <FormControl 
-                        label="Confirm Password"
-                        name="confirmPassword"
-                        type="password"
-                        value={formData.confirmPassword}
-                        handleChange={handleChange}
-                        onBlur={handleConfirmPasswordBlur}
-                        error={errors.confirmPassword}
-                        required
-                    />)}
-                    <Button fullWidth loading={status === HTTP_STATUS.PENDING}>{ isSignup ? 'Sign Up' : 'Login' }</Button>
-                </Form>
-                <Styles.Footer>
-                    <Styles.FooterElement onClick={handleSignupToggle}>{ !isSignup ? 'Sign Up' : 'Login' }</Styles.FooterElement>
-                    { !isSignup && <Styles.FooterElement>Forgot Password?</Styles.FooterElement>}
-                </Styles.Footer>
-            </Styles.FormContainer>
-        </Styles.Root>
+                    <Styles.Error>{ error?.message }</Styles.Error>
+                    <Form handleSubmit={handleSubmit}>
+                        { isSignup && (
+                        <FormControl 
+                            label="Name"
+                            name="name"
+                            type="text"
+                            value={formData.name}
+                            handleChange={handleChange}
+                            required
+                        />)}
+                        <FormControl 
+                            label="Email"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            handleChange={handleChange}
+                            onBlur={handleEmailBlur}
+                            error={errors.email}
+                            required
+                        />
+                        <FormControl 
+                            label="Password"
+                            name="password"
+                            type="password"
+                            value={formData.password}
+                            handleChange={handleChange}
+                            onBlur={handlePasswordBlur}
+                            error={errors.password}
+                            required
+                        />
+                        { isSignup && (
+                        <FormControl 
+                            label="Confirm Password"
+                            name="confirmPassword"
+                            type="password"
+                            value={formData.confirmPassword}
+                            handleChange={handleChange}
+                            onBlur={handleConfirmPasswordBlur}
+                            error={errors.confirmPassword}
+                            required
+                        />)}
+                        <Button fullWidth loading={status === HTTP_STATUS.PENDING}>{ isSignup ? 'Sign Up' : 'Login' }</Button>
+                    </Form>
+                    <Styles.Footer>
+                        <Styles.FooterElement onClick={handleSignupToggle}>{ !isSignup ? 'Sign Up' : 'Login' }</Styles.FooterElement>
+                        { !isSignup && <Styles.FooterElement>Forgot Password?</Styles.FooterElement>}
+                    </Styles.Footer>
+                </Styles.FormContainer>
+            </Styles.Root>
+        </AnimatedPage>
     )
 }
 

@@ -9,6 +9,7 @@ import { selectMemories } from '../../redux/memories/memories.selectors';
 import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
 import { getMemories } from '../../redux/memories/memories.slice';
 import { useEffect } from 'react';
+import { AnimatedPage } from '../../components/animation/animatedPage.component';
 
 
 function Memories() {
@@ -36,20 +37,22 @@ function Memories() {
     }, [status, _getMemories])
 
     return (
-        <Styles.Root>
-            <Styles.Container>
-                <Styles.Title>Memories Gallery</Styles.Title>
-                <Styles.GridContainer>
-                    <Styles.GridLeft style={{ width: !userData?._id && '100%' }}>
-                        <ListMemories memories={memories} />
-                    </Styles.GridLeft>
+        <AnimatedPage>
+            <Styles.Root>
+                <Styles.Container>
+                    <Styles.Title>Memories Gallery</Styles.Title>
+                    <Styles.GridContainer>
+                        <Styles.GridLeft style={{ width: !userData?._id && '100%' }}>
+                            <ListMemories memories={memories} />
+                        </Styles.GridLeft>
 
-                    <Styles.GridRight style={{ display: !userData?._id && 'none' }}>
-                        <NewMemoryForm />
-                    </Styles.GridRight>
-                </Styles.GridContainer>
-            </Styles.Container>
-      </Styles.Root>
+                        <Styles.GridRight style={{ display: !userData?._id && 'none' }}>
+                            <NewMemoryForm />
+                        </Styles.GridRight>
+                    </Styles.GridContainer>
+                </Styles.Container>
+            </Styles.Root>
+        </AnimatedPage>
     )
 }
 
