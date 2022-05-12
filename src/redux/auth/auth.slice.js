@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
 import { asyncRequest } from '../services'
 import * as asyncReducers from './auth.extraReducers'
 
@@ -10,6 +9,10 @@ const namespace = 'auth'
  *************************************************************/
 export const loginUser = asyncRequest(`${namespace}/loginUser`, '/api/user/login', 'post')
 export const signupUser = asyncRequest(`${namespace}/signupUser`, '/api/user/signup', 'post')
+export const getLoggedInUser = asyncRequest(`${namespace}/getLoggedInUser`, '/api/user/getLoggedInUser', 'get')
+
+
+const DEFAULT = { status: null, data: null, error: null }
 
 /*************************************************************
  * slice
@@ -18,11 +21,14 @@ const authSlice = createSlice({
     name: 'auth',
 
     initialState: {
-        user: { status: null, data: null, error: null }
+        user: DEFAULT
     },
     
     reducers: {
-        
+        logout(state) {
+            state.user = DEFAULT
+            localStorage.removeItem('memories-user-token')
+        }
     },
 
     extraReducers: {
@@ -33,9 +39,13 @@ const authSlice = createSlice({
         [signupUser.pending]: asyncReducers.authUserPending,
         [signupUser.fulfilled]: asyncReducers.authUserFulfilled,
         [signupUser.rejected]: asyncReducers.authUserRejected,
+
+        [getLoggedInUser.pending]: asyncReducers.authUserPending,
+        [getLoggedInUser.fulfilled]: asyncReducers.getLoggedInUserFulfilled,
+        [getLoggedInUser.rejected]: asyncReducers.authUserRejected,
     }
 })
 
-// export const {  } = authSlice.actions
+export const { logout } = authSlice.actions
 
 export default authSlice.reducer

@@ -16,3 +16,9 @@ export const authUserRejected = (state, { payload }) => {
     state.user.error = payload
     state.user.data = null
 }
+
+export const getLoggedInUserFulfilled = (state, { payload }) => {
+    state.user.status = HTTP_STATUS.FULFILLED
+    state.user.data = payload
+    state.user.error = null
+}

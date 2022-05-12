@@ -6,7 +6,7 @@ export const getMemoriesPending = (state) => {
 
 export const getMemoriesFulfilled = (state, { payload }) => {
     state.memories.status = HTTP_STATUS.FULFILLED
-    state.memories.data = payload
+    state.memories.data = payload.reverse()
 }
 
 export const getMemoriesRejected = (state, { payload }) => {

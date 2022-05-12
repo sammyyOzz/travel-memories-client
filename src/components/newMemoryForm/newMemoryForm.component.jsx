@@ -13,12 +13,6 @@ export function NewMemoryForm() {
     const defaultMemory = { place: "", description: "", image: "" }
 
     /***********************************************************************
-     * selectors
-     ***********************************************************************/
-    const { data: userData } = useSelector(selectLoggedInUser)
-
-
-    /***********************************************************************
      * dispatch
      ***********************************************************************/
     const dispatch = useDispatch()
