@@ -8,7 +8,7 @@ export const ListMemories = React.memo(({ memories }) => {
     return (
         <Styles.Root>
             { memories.map(memory => (
-                <MemoryCard key={memory.id} { ...memory } />
+                <MemoryCard key={memory._id} { ...memory } />
             ))}
         </Styles.Root>
     )

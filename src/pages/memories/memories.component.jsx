@@ -1,17 +1,39 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import * as Styles from './memories.styles'
 
 import { ListMemories } from '../../components/listMemories/listMemories.component';
 import { NewMemoryForm } from '../../components/newMemoryForm/newMemoryForm.component';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectMemories } from '../../redux/memories/memories.selectors';
 import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
+import { getMemories } from '../../redux/memories/memories.slice';
+import { useEffect } from 'react';
 
 
 function Memories() {
-    const memories = useSelector(selectMemories)
+    /*************************************************************
+     * selectors
+     *************************************************************/
+    const { data: memories, status } = useSelector(selectMemories)
     const { data: userData } = useSelector(selectLoggedInUser)
+
+
+    /*************************************************************
+     * dispatch
+     *************************************************************/
+    const dispatch = useDispatch()
+
+    const _getMemories = useCallback(() => dispatch(getMemories()), [dispatch])
+
+    /*************************************************************
+     * hooks
+     *************************************************************/
+    useEffect(() => {
+        if (status === null) {
+            _getMemories()
+        }
+    }, [status, _getMemories])
 
     return (
         <Styles.Root>

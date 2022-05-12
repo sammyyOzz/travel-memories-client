@@ -1,23 +1,43 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { defaultMemories } from '../../data/memories.data'
+import { asyncRequest } from '../services'
+import * as asyncReducers from './memories.extraReducers'
+
+const namespace = 'memories'
+
+/*************************************************************
+ * async thunks
+ *************************************************************/
+export const getMemories = asyncRequest(`${namespace}/getMemories`, '/api/memory', 'get')
+export const saveMemory = asyncRequest(`${namespace}/saveMemory`, '/api/memory', 'post')
 
 
+
+const DEFAULT = { status: null, data: null, error: null }
+
+/*************************************************************
+ * slice
+ *************************************************************/
 const memoriesSlice = createSlice({
     name: 'memories',
 
     initialState: {
-        memories: defaultMemories
+        memories: { ...DEFAULT, data: [] },
+        saveMemory: DEFAULT,
     },
     
-    reducers: {
-        addNewMemory(state, { payload }) {
-            const previousMemories = state.memories
-            state.memories = [payload, ...previousMemories]
-        }
-    },
+    // reducers: {
+        
+    // },
 
-    // extraReducers: {
-    // }
+    extraReducers: {
+        [getMemories.pending]: asyncReducers.getMemoriesPending,
+        [getMemories.fulfilled]: asyncReducers.getMemoriesFulfilled,
+        [getMemories.rejected]: asyncReducers.getMemoriesRejected,
+
+        [saveMemory.pending]: asyncReducers.saveMemoryPending,
+        [saveMemory.fulfilled]: asyncReducers.saveMemoryFulfilled,
+        [saveMemory.rejected]: asyncReducers.saveMemoryRejected,
+    }
 })
 
 export const { addNewMemory } = memoriesSlice.actions

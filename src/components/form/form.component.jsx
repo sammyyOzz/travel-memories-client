@@ -28,10 +28,10 @@ export function FormControl({ label, handleChange, textarea, error, ...inputProp
     )
 }
 
-export function Form({ children, handleSubmit }) {
+export function Form({ children, handleSubmit, ...props }) {
 
     return (
-        <Styles.Form onSubmit={handleSubmit}>
+        <Styles.Form onSubmit={handleSubmit} { ...props }>
             { children }
         </Styles.Form>
     )

@@ -5,10 +5,15 @@ import * as asyncReducers from './auth.extraReducers'
 
 const namespace = 'auth'
 
+/*************************************************************
+ * async thunks
+ *************************************************************/
 export const loginUser = asyncRequest(`${namespace}/loginUser`, '/api/user/login', 'post')
 export const signupUser = asyncRequest(`${namespace}/signupUser`, '/api/user/signup', 'post')
 
-
+/*************************************************************
+ * slice
+ *************************************************************/
 const authSlice = createSlice({
     name: 'auth',
 
