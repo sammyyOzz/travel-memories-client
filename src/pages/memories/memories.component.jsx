@@ -5,12 +5,14 @@ import { ListMemories } from '../../components/listMemories/listMemories.compone
 import { NewMemoryForm } from '../../components/newMemoryForm/newMemoryForm.component';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { selectMemories } from '../../redux/memories/memories.selectors';
+import { selectMemories, selectMemoryForDisplay } from '../../redux/memories/memories.selectors';
 import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
-import { getMemories } from '../../redux/memories/memories.slice';
+import { getMemories, setMemoryForDisplay } from '../../redux/memories/memories.slice';
 import { useEffect } from 'react';
 import { AnimatedPage } from '../../components/animation/animatedPage.component';
 import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant';
+import { Modal } from '../../components/modal/modal.component';
+import { MemoryForDisplay } from '../../components/memoryForDisplay.component.jsx/memoryForDisplay.component';
 
 
 function Memories() {
@@ -19,6 +21,7 @@ function Memories() {
      *************************************************************/
     const { data: memories, status } = useSelector(selectMemories)
     const { data: userData } = useSelector(selectLoggedInUser)
+    const memoryForDisplay = useSelector(selectMemoryForDisplay)
 
 
     /*************************************************************
@@ -27,6 +30,7 @@ function Memories() {
     const dispatch = useDispatch()
 
     const _getMemories = useCallback(() => dispatch(getMemories()), [dispatch])
+    const _setMemoryForDisplay = (data) => dispatch(setMemoryForDisplay(data))
 
     /*************************************************************
      * hooks
@@ -37,23 +41,37 @@ function Memories() {
         }
     }, [status, _getMemories])
 
-    return (
-        <AnimatedPage>
-            <Styles.Root>
-                <Styles.Container>
-                    <Styles.Title>Memories Gallery</Styles.Title>
-                    <Styles.GridContainer>
-                        <Styles.GridLeft style={{ width: !userData?._id && '100%' }}>
-                            <ListMemories memories={memories} loading={status === HTTP_STATUS.PENDING} />
-                        </Styles.GridLeft>
 
-                        <Styles.GridRight style={{ display: !userData?._id && 'none' }}>
-                            <NewMemoryForm />
-                        </Styles.GridRight>
-                    </Styles.GridContainer>
-                </Styles.Container>
-            </Styles.Root>
-        </AnimatedPage>
+    /*************************************************************
+     * handlers
+     *************************************************************/
+    const handleModalClose = () => _setMemoryForDisplay(null)
+
+    return (
+        <>
+            <AnimatedPage>
+                <Styles.Root>
+                    <Styles.Container>
+                        <Styles.Title>Memories Gallery</Styles.Title>
+                        <Styles.GridContainer>
+                            <Styles.GridLeft style={{ width: !userData?._id && '100%' }}>
+                                <ListMemories memories={memories} loading={status === HTTP_STATUS.PENDING} />
+                            </Styles.GridLeft>
+
+                            <Styles.GridRight style={{ display: !userData?._id && 'none' }}>
+                                <NewMemoryForm />
+                            </Styles.GridRight>
+                        </Styles.GridContainer>
+                    </Styles.Container>
+                </Styles.Root>
+            </AnimatedPage>
+
+            { memoryForDisplay && (
+                <Modal open={memoryForDisplay} handleClose={handleModalClose}>
+                    <MemoryForDisplay />
+                </Modal>
+            )}
+        </>
     )
 }
 

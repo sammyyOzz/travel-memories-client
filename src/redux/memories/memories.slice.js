@@ -23,11 +23,14 @@ const memoriesSlice = createSlice({
     initialState: {
         memories: { ...DEFAULT, data: [] },
         saveMemory: DEFAULT,
+        memoryForDisplay: null,
     },
     
-    // reducers: {
-        
-    // },
+    reducers: {
+        setMemoryForDisplay(state, { payload }) {
+            state.memoryForDisplay = payload
+        }
+    },
 
     extraReducers: {
         [getMemories.pending]: asyncReducers.getMemoriesPending,
@@ -40,6 +43,6 @@ const memoriesSlice = createSlice({
     }
 })
 
-export const { addNewMemory } = memoriesSlice.actions
+export const { addNewMemory, setMemoryForDisplay } = memoriesSlice.actions
 
 export default memoriesSlice.reducer
