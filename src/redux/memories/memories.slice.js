@@ -27,6 +27,7 @@ const memoriesSlice = createSlice({
         saveMemory: DEFAULT,
         memoryForDisplay: null,
         comments: { ...DEFAULT, data: [] },
+        createComment: DEFAULT,
     },
     
     reducers: {
@@ -50,6 +51,10 @@ const memoriesSlice = createSlice({
         [getComments.pending]: asyncReducers.getCommentsPending,
         [getComments.fulfilled]: asyncReducers.getCommentsFulfilled,
         [getComments.rejected]: asyncReducers.getCommentsRejected,
+
+        [createComment.pending]: asyncReducers.createCommentPending,
+        [createComment.fulfilled]: asyncReducers.createCommentFulfilled,
+        [createComment.rejected]: asyncReducers.createCommentRejected,
     }
 })
 
@@ -57,7 +62,7 @@ export const {
     addNewMemory, 
     setMemoryForDisplay,
     clearComments 
-    
+
 } = memoriesSlice.actions
 
 export default memoriesSlice.reducer

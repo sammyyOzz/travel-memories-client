@@ -42,3 +42,18 @@ export const getCommentsRejected = (state, { payload }) => {
     state.comments.status = HTTP_STATUS.REJECTED
     state.comments.error = payload
 }
+
+export const createCommentPending = (state) => {
+    state.createComment.status = HTTP_STATUS.PENDING
+}
+
+export const createCommentFulfilled = (state, { payload }) => {
+    state.createComment.status = HTTP_STATUS.FULFILLED
+    const oldComments = state.comments.data
+    state.comments.data = [ ...oldComments, payload ]
+}
+
+export const createCommentRejected = (state, { payload }) => {
+    state.createComment.status = HTTP_STATUS.REJECTED
+    state.createComment.error = payload
+}

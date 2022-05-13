@@ -62,6 +62,10 @@ export const Right = styled.div`
     }
 `
 
+export const Title = styled.h2`
+color: gray;
+`
+
 export const RightContainer = styled.div`
     width: calc(100% - 20px);
     margin: auto;
@@ -73,11 +77,29 @@ export const RightTop = styled.div`
 
     @media(max-width: ${p => p.theme.breakpoints.md}) {
        overflow-y: visible;
-       height: auto;
+       min-height: 300px;
     }
 `
 
 export const RightBottom = styled.div`
     height: 50px;
+
+`
+
+export const Comment = styled.div`
+    margin: 20px 0;
+
+    &:first-child {
+        margin-top: 20px;
+    }
+`
+
+export const CommentBody = styled.span`
+    background-color: #d3d2d2; 
+    color: black;
+    margin-left: 10px;
+    padding: 10px 15px 7px 15px;
+    text-align: center;
+    border-radius: 10px;
 
 `

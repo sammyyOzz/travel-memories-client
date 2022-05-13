@@ -25,7 +25,7 @@ export function MemoryForDisplay({ _id, imageUrl, place, description, name }) {
     * dispatch
     ***********************************************************************/
     const dispatch = useDispatch()
-    const _createComment = (data) => dispatch(createComment(data))
+    const _createComment = (data) => dispatch(createComment(data)).unwrap().then(() => setNewComment(''))
     const _getComments = (data) => dispatch(getComments(data))
 
 
@@ -55,16 +55,24 @@ export function MemoryForDisplay({ _id, imageUrl, place, description, name }) {
             </Styles.Left>
 
             <Styles.Right>
-                <Styles.RightContainer>
+                
                     <Styles.RightTop>
+                        <Styles.Title>Comments</Styles.Title>
                         { status === HTTP_STATUS.PENDING ? (
                             <CommentLoader />
                         ) : (
-                            <></>
+                            <>
+                                { comments.map(comment => (
+                                    <Styles.Comment key={comment._id}>
+                                        <Styles.CommentBody>{ comment.body }</Styles.CommentBody>
+                                    </Styles.Comment>
+                                ))}
+                            </>
                         )}
 
                     </Styles.RightTop>
                 
+                <Styles.RightContainer>
                     <Styles.RightBottom>
                         <Form handleSubmit={handleSubmit}>
                             <FormControl
