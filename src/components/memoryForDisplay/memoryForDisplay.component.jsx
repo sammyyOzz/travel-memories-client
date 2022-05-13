@@ -1,7 +1,49 @@
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLoggedInUser } from '../../redux/auth/auth.selectors'
+import { selectComments } from '../../redux/memories/memories.selectors'
+import { createComment, getComments } from '../../redux/memories/memories.slice'
+import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
+import { Form, FormControl } from '../form/form.component'
+import { CommentLoader } from '../loaders/commentLoader.component'
 import * as Styles from './memoryForDisplay.styles'
 
 
 export function MemoryForDisplay({ _id, imageUrl, place, description, name }) {
+    /***********************************************************************
+    * selectors
+    ***********************************************************************/
+    const { data: userData } = useSelector(selectLoggedInUser)
+    const { data: comments, status } = useSelector(selectComments)
+
+    /***********************************************************************
+    * state
+    ***********************************************************************/
+    const [newComment, setNewComment] = useState("")
+
+    /***********************************************************************
+    * dispatch
+    ***********************************************************************/
+    const dispatch = useDispatch()
+    const _createComment = (data) => dispatch(createComment(data))
+    const _getComments = (data) => dispatch(getComments(data))
+
+
+    /***********************************************************************
+    * hooks
+    ***********************************************************************/
+    useEffect(() => {
+        _getComments({ urlParams: `/${_id}` })
+    }, [])
+
+    /***********************************************************************
+    * handlers
+    ***********************************************************************/
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        _createComment({ body: newComment, urlParams: `/${_id}` })
+    }
 
     return (
         <Styles.Root>
@@ -13,7 +55,27 @@ export function MemoryForDisplay({ _id, imageUrl, place, description, name }) {
             </Styles.Left>
 
             <Styles.Right>
-                { Array(10).fill().map((_, i) => <Styles.Description>{ description }</Styles.Description>)}
+                <Styles.RightContainer>
+                    <Styles.RightTop>
+                        { status === HTTP_STATUS.PENDING ? (
+                            <CommentLoader />
+                        ) : (
+                            <></>
+                        )}
+
+                    </Styles.RightTop>
+                
+                    <Styles.RightBottom>
+                        <Form handleSubmit={handleSubmit}>
+                            <FormControl
+                                placeholder="make a comment"
+                                value={newComment}
+                                handleChange={(e) => setNewComment(e.target.value)}
+                                disabled={!userData?._id}
+                            />
+                        </Form>
+                    </Styles.RightBottom>
+                </Styles.RightContainer>
             </Styles.Right>
         </Styles.Root>
     )

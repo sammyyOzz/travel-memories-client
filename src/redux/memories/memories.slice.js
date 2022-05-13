@@ -9,6 +9,8 @@ const namespace = 'memories'
  *************************************************************/
 export const getMemories = asyncRequest(`${namespace}/getMemories`, '/api/memory', 'get')
 export const saveMemory = asyncRequest(`${namespace}/saveMemory`, '/api/memory', 'post')
+export const getComments = asyncRequest(`${namespace}/getComments`, '/api/comment', 'get')
+export const createComment = asyncRequest(`${namespace}/createComment`, '/api/comment', 'post')
 
 
 
@@ -24,11 +26,15 @@ const memoriesSlice = createSlice({
         memories: { ...DEFAULT, data: [] },
         saveMemory: DEFAULT,
         memoryForDisplay: null,
+        comments: { ...DEFAULT, data: [] },
     },
     
     reducers: {
         setMemoryForDisplay(state, { payload }) {
             state.memoryForDisplay = payload
+        },
+        clearComments(state) {
+            state.comments = { ...DEFAULT, data: [] }
         }
     },
 
@@ -40,9 +46,18 @@ const memoriesSlice = createSlice({
         [saveMemory.pending]: asyncReducers.saveMemoryPending,
         [saveMemory.fulfilled]: asyncReducers.saveMemoryFulfilled,
         [saveMemory.rejected]: asyncReducers.saveMemoryRejected,
+
+        [getComments.pending]: asyncReducers.getCommentsPending,
+        [getComments.fulfilled]: asyncReducers.getCommentsFulfilled,
+        [getComments.rejected]: asyncReducers.getCommentsRejected,
     }
 })
 
-export const { addNewMemory, setMemoryForDisplay } = memoriesSlice.actions
+export const { 
+    addNewMemory, 
+    setMemoryForDisplay,
+    clearComments 
+    
+} = memoriesSlice.actions
 
 export default memoriesSlice.reducer

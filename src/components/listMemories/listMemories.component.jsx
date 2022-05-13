@@ -17,7 +17,7 @@ export const ListMemories = React.memo(({ memories, loading }) => {
         </AnimatedCard>
     ) : (
         <Styles.Root>
-            { Array(6).fill().map((_, i) => <MemoryCardLoader />) }
+            { Array(6).fill().map((_, i) => <MemoryCardLoader key={i} />) }
         </Styles.Root>
     )
 })

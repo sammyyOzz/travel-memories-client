@@ -53,11 +53,31 @@ export const Footer = styled.div`
 export const Right = styled.div`
     width: 50%;
     height: 500px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 
     @media(max-width: ${p => p.theme.breakpoints.md}) {
        width: 100%; 
        overflow-y: visible;
        height: auto;
     }
+`
+
+export const RightContainer = styled.div`
+    width: calc(100% - 20px);
+    margin: auto;
+`
+
+export const RightTop = styled.div`
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+
+    @media(max-width: ${p => p.theme.breakpoints.md}) {
+       overflow-y: visible;
+       height: auto;
+    }
+`
+
+export const RightBottom = styled.div`
+    height: 50px;
+
 `

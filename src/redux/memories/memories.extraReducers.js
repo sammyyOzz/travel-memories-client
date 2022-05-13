@@ -29,3 +29,16 @@ export const saveMemoryRejected = (state, { payload }) => {
     state.saveMemory.error = payload
 }
 
+export const getCommentsPending = (state) => {
+    state.comments.status = HTTP_STATUS.PENDING
+}
+
+export const getCommentsFulfilled = (state, { payload }) => {
+    state.comments.status = HTTP_STATUS.FULFILLED
+    state.comments.data = payload
+}
+
+export const getCommentsRejected = (state, { payload }) => {
+    state.comments.status = HTTP_STATUS.REJECTED
+    state.comments.error = payload
+}
