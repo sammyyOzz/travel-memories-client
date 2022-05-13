@@ -11,9 +11,9 @@ import { getMemories, setMemoryForDisplay } from '../../redux/memories/memories.
 import { useEffect } from 'react';
 import { AnimatedPage } from '../../components/animation/animatedPage.component';
 import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant';
-import { Modal } from '../../components/modal/modal.component';
-import { MemoryForDisplay } from '../../components/memoryForDisplay.component.jsx/memoryForDisplay.component';
+import { MemoryForDisplay } from '../../components/memoryForDisplay/memoryForDisplay.component';
 
+import TransitionsModal from '../../components/modal/modal.component'
 
 function Memories() {
     /*************************************************************
@@ -67,9 +67,9 @@ function Memories() {
             </AnimatedPage>
 
             { memoryForDisplay && (
-                <Modal open={memoryForDisplay} handleClose={handleModalClose}>
-                    <MemoryForDisplay />
-                </Modal>
+                <TransitionsModal open={memoryForDisplay} handleClose={handleModalClose}>
+                    <MemoryForDisplay { ...memoryForDisplay } />
+                </TransitionsModal>
             )}
         </>
     )

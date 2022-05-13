@@ -3,16 +3,22 @@ import styled from 'styled-components'
 
 export const Root = styled.div`
     display: flex;
+
+    @media(max-width: ${p => p.theme.breakpoints.md}) {
+       flex-direction: column; 
+    }
     
 `
 
 export const Left = styled.div`
     width: 50%;
-    height: 100%;
+    height: 500px;
     overflow-y: scroll;
 
     @media(max-width: ${p => p.theme.breakpoints.md}) {
        width: 100%; 
+       overflow-y: visible;
+       height: auto;
     }
 `
 
@@ -20,6 +26,10 @@ export const Image = styled.img`
     width: 100%;
     height: auto;
     object-fit: cover;
+
+    @media(max-width: ${p => p.theme.breakpoints.md}) {
+       width: 100%; 
+    }
 `
 
 export const Place = styled.h2`
@@ -37,18 +47,17 @@ export const Description = styled.div`
 export const Footer = styled.div`
     font-size: 14px;
     color: #a39e9e;
-    /* margin: 10px 20px; */
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
+    margin-left: 20px;
 `
 
 export const Right = styled.div`
     width: 50%;
-    height: 100%;
+    height: 500px;
     overflow-y: scroll;
 
     @media(max-width: ${p => p.theme.breakpoints.md}) {
        width: 100%; 
+       overflow-y: visible;
+       height: auto;
     }
 `

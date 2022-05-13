@@ -1,28 +1,35 @@
 import * as React from 'react';
-import MuiModal from '@mui/material/Modal';
-import { CloseModalBox, ModalBox, ModalContent } from './modal.styles';
-import CloseIcon from '@mui/icons-material/Close';
+import Backdrop from '@mui/material/Backdrop';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import { Box, CloseBox }from './modal.styles';
+import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 
 
-export function Modal({ children, open, handleClose, fullScreenForMobile }) {
+export default function TransitionsModal({ children, open, handleClose }) {
 
     return (
-        <MuiModal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        >
-        <ModalBox fullScreen={fullScreenForMobile}>
-            <ModalContent fullScreen={fullScreenForMobile}>
-            <CloseModalBox onClick={handleClose}>
-                <CloseIcon fontSize="large" />
-            </CloseModalBox>
-
-            { children }
-
-            </ModalContent>
-        </ModalBox>
-        </MuiModal>
+        <div>
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={open}
+                onClose={handleClose}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+            >
+                <Fade in={open}>
+                    <Box>
+                        <CloseBox>
+                            <CancelPresentationIcon onClick={handleClose} />
+                        </CloseBox>
+                        {children}
+                    </Box>
+                </Fade>
+            </Modal>
+        </div>
     );
 }
