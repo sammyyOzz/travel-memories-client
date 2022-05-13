@@ -5,12 +5,12 @@ export function CommentLoader() {
     return (
         <SkeletonTheme baseColor="#d4d1d1" highlightColor="#b3b6b6">
             { Array(2).fill().map((_, i) => (
-                <p>
+                <p key={i}>
                     <Skeleton height={20} style={{ marginBottom: '20px', borderRadius: '10px', width: '50%' }} />
                 </p>
             ))}
             { Array(2).fill().map((_, i) => (
-                <p>
+                <p key={i}>
                     <Skeleton height={20} style={{ marginBottom: '20px', borderRadius: '10px', width: '100%' }} />
                 </p>
             ))}

@@ -87,7 +87,7 @@ export const RightBottom = styled.div`
 `
 
 export const Comment = styled.div`
-    margin: 20px 0;
+    margin: 30px 0;
 
     &:first-child {
         margin-top: 20px;
@@ -102,4 +102,16 @@ export const CommentBody = styled.span`
     text-align: center;
     border-radius: 10px;
 
+`
+
+export const CommentAuthor = styled.p`
+    font-weight: bold;
+    font-size: 13px;
+    margin: 3px auto auto 20px;
+
+    & > span {
+        background-color: skyblue;
+        padding: 2px 10px;
+        border-radius: 10px;
+    }
 `
