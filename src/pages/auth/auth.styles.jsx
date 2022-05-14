@@ -47,3 +47,7 @@ export const Error = styled.p`
     color: red;
     font-size: 14px;
 `
+
+export const Message = styled.p`
+    font-size: 14px;
+`

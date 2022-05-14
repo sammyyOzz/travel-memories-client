@@ -10,6 +10,8 @@ const namespace = 'auth'
 export const loginUser = asyncRequest(`${namespace}/loginUser`, '/api/user/login', 'post')
 export const signupUser = asyncRequest(`${namespace}/signupUser`, '/api/user/signup', 'post')
 export const getLoggedInUser = asyncRequest(`${namespace}/getLoggedInUser`, '/api/user/getLoggedInUser', 'get')
+export const forgotPassword = asyncRequest(`${namespace}/forgotPassword`, '/api/user/forgotPassword', 'post')
+export const resetPassword = asyncRequest(`${namespace}/resetPassword`, '/api/user/resetPassword', 'post')
 
 
 const DEFAULT = { status: null, data: null, error: null }

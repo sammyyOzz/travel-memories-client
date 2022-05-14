@@ -153,7 +153,7 @@ function Auth() {
                     </Form>
                     <Styles.Footer>
                         <Styles.FooterElement onClick={handleSignupToggle}>{ !isSignup ? 'Sign Up' : 'Login' }</Styles.FooterElement>
-                        { !isSignup && <Styles.FooterElement>Forgot Password?</Styles.FooterElement>}
+                        <Styles.FooterElement onClick={() => navigate('/forgot-password')}>Forgot Password?</Styles.FooterElement> 
                     </Styles.Footer>
                 </Styles.FormContainer>
             </Styles.Root>
