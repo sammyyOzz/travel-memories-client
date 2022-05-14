@@ -3,6 +3,7 @@ import { MemoryCardLoader } from '../loaders/memoryCardLoader.component'
 import { MemoryCard } from '../memoryCard/memoryCard.component'
 import * as Styles from './listMemories.styles'
 import { AnimatedCard } from '../animation/animatedCard.component';
+import PropTypes from 'prop-types'
 
 
 export const ListMemories = React.memo(({ memories, loading }) => {
@@ -21,3 +22,8 @@ export const ListMemories = React.memo(({ memories, loading }) => {
         </Styles.Root>
     )
 })
+
+ListMemories.propTypes = {
+    memories: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired
+}

@@ -4,6 +4,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import { Box, CloseBox }from './modal.styles';
 import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
+import PropTypes from 'prop-types'
 
 
 export default function TransitionsModal({ children, open, handleClose }) {
@@ -32,4 +33,11 @@ export default function TransitionsModal({ children, open, handleClose }) {
             </Modal>
         </div>
     );
+}
+
+
+TransitionsModal.propTypes = {
+    children: PropTypes.any,
+    open: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired
 }

@@ -4,9 +4,12 @@ import { selectLoggedInUser } from '../../redux/auth/auth.selectors'
 import { selectComments } from '../../redux/memories/memories.selectors'
 import { createComment, getComments } from '../../redux/memories/memories.slice'
 import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
+import { baseUrl } from '../../utils/services/axios'
 import { Form, FormControl } from '../form/form.component'
 import { CommentLoader } from '../loaders/commentLoader.component'
 import * as Styles from './memoryForDisplay.styles'
+import PropTypes from 'prop-types'
+
 
 
 export function MemoryForDisplay({ _id, imageUrl, place, description, name }) {
@@ -48,7 +51,7 @@ export function MemoryForDisplay({ _id, imageUrl, place, description, name }) {
     return (
         <Styles.Root>
             <Styles.Left>
-                <Styles.Image src={imageUrl} />
+                <Styles.Image src={`${baseUrl}/images/${imageUrl}`} />
                 <Styles.Place>{ place }</Styles.Place>
                 <Styles.Description>{ description }</Styles.Description>
                 <Styles.Footer>{ `--${name}--` }</Styles.Footer>
@@ -88,4 +91,13 @@ export function MemoryForDisplay({ _id, imageUrl, place, description, name }) {
             </Styles.Right>
         </Styles.Root>
     )
+}
+
+
+MemoryForDisplay.propTypes = {
+    _id: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string,
+    place: PropTypes.string,
+    description: PropTypes.string,
+    name: PropTypes.string
 }

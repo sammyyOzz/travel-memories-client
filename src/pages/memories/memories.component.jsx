@@ -15,6 +15,7 @@ import { MemoryForDisplay } from '../../components/memoryForDisplay/memoryForDis
 
 import TransitionsModal from '../../components/modal/modal.component'
 
+
 function Memories() {
     /*************************************************************
      * selectors
@@ -67,7 +68,7 @@ function Memories() {
             </AnimatedPage>
 
             { memoryForDisplay && (
-                <TransitionsModal open={memoryForDisplay} handleClose={handleModalClose}>
+                <TransitionsModal open={memoryForDisplay !== null} handleClose={handleModalClose}>
                     <MemoryForDisplay { ...memoryForDisplay } />
                 </TransitionsModal>
             )}
