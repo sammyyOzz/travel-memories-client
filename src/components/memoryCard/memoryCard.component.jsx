@@ -30,6 +30,12 @@ export function MemoryCard({ _id, imageUrl, place, description, user: { name } }
     )
 }
 
+MemoryCard.defaultProps = {
+    _id: `${Math.random()}`,
+    user: {
+        name: PropTypes.string
+    }
+}
 
 MemoryCard.propTypes = {
     _id: PropTypes.string.isRequired,

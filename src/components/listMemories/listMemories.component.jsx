@@ -10,7 +10,7 @@ export const ListMemories = React.memo(({ memories, loading }) => {
 
     return !loading ? (
         <AnimatedCard>
-            <Styles.Root>
+            <Styles.Root data-testid="list-memories">
                 { memories.map(memory => (
                     <MemoryCard key={memory._id} { ...memory } />
                 ))}

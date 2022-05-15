@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import * as Styles from './memories.styles'
 
 import { ListMemories } from '../../components/listMemories/listMemories.component';
@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectMemories, selectMemoryForDisplay } from '../../redux/memories/memories.selectors';
 import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
 import { getMemories, setMemoryForDisplay } from '../../redux/memories/memories.slice';
-import { useEffect } from 'react';
 import { AnimatedPage } from '../../components/animation/animatedPage.component';
 import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant';
 import { MemoryForDisplay } from '../../components/memoryForDisplay/memoryForDisplay.component';
