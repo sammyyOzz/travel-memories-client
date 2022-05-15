@@ -36,14 +36,14 @@ export function Navbar() {
             { userData?._id ? (
                 <ClickAwayListener onClickAway={hideLogoutButton}>
                     <Styles.NameContainer>
-                        <Styles.Name onClick={showLogoutButton}>{ `Hi, ${userData.name}` }</Styles.Name>
+                        <Styles.Name data-testid="user-logged-in" onClick={showLogoutButton}>{ `Hi, ${userData.name}` }</Styles.Name>
                         { logoutButtonIsVisible && (
-                            <Button onClick={handleLogout} className="navbar-logout-button">Logout</Button>
+                            <Button data-testid="logout-button" onClick={handleLogout} className="navbar-logout-button">Logout</Button>
                         )}
                     </Styles.NameContainer>
                 </ClickAwayListener>
             ) : (
-                <Link to={ pathname === '/memories' ? '/auth' : '/memories'}>
+                <Link to={ pathname === '/memories' ? '/auth' : '/memories'} data-testid="user-logged-out">
                     <Styles.Login>{ pathname === '/memories' ? 'Login' : 'Memories' }</Styles.Login>
                 </Link>
             )}
