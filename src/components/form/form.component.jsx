@@ -13,12 +13,14 @@ export function FormControl({ label, handleChange, textarea, error, ...inputProp
                         onChange={handleChange}
                         error={error}
                         { ...inputProps }
+                        data-testid="form-control-input"
                     />
                 ) : (
                     <Styles.Textarea 
                         onChange={handleChange}
                         error={error}
                         { ...inputProps }
+                        data-testid="form-control-textarea"
                     />
                 )
 
@@ -31,7 +33,7 @@ export function FormControl({ label, handleChange, textarea, error, ...inputProp
 export function Form({ children, handleSubmit, ...props }) {
 
     return (
-        <Styles.Form onSubmit={handleSubmit} { ...props }>
+        <Styles.Form data-testid="form" onSubmit={handleSubmit} { ...props }>
             { children }
         </Styles.Form>
     )
@@ -40,7 +42,7 @@ export function Form({ children, handleSubmit, ...props }) {
 
 FormControl.propTypes = {
     label: PropTypes.string,
-    handleChange: PropTypes.func.isRequired,
+    handleChange: PropTypes.func,
     textarea: PropTypes.bool,
     error: PropTypes.string,
 }
