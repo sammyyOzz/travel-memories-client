@@ -77,6 +77,8 @@ export function NewMemoryForm() {
 
             <Form handleSubmit={handleSubmit} encType='multipart/form-data'>
                 <FormControl 
+                  id="place"
+                  htmlFor="place"
                   label="Place" 
                   name="place" 
                   value={newMemory.place}
@@ -84,6 +86,8 @@ export function NewMemoryForm() {
                   required 
                 />
                 <FormControl 
+                  id="description"
+                  htmlFor="description"
                   label="Description" 
                   name="description" 
                   value={newMemory.description}

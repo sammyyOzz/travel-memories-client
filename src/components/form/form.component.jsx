@@ -2,14 +2,15 @@ import React from 'react'
 import * as Styles from './form.styles'
 import PropTypes from 'prop-types'
 
-export function FormControl({ label, handleChange, textarea, error, ...inputProps }) {
+export function FormControl({ label, htmlFor, name, handleChange, textarea, error, ...inputProps }) {
 
     return (
         <Styles.Root>
-            <Styles.Label>{ label }</Styles.Label>
+            <Styles.Label htmlFor={htmlFor}>{ label }</Styles.Label>
             {
                 !textarea ? (
                     <Styles.Input 
+                        name={name}
                         onChange={handleChange}
                         error={error}
                         { ...inputProps }
