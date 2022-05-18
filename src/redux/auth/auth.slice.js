@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { removeUserToken } from '../../utils/services/auth.service'
 import { asyncRequest } from '../services'
 import * as asyncReducers from './auth.extraReducers'
 
@@ -29,7 +30,8 @@ const authSlice = createSlice({
     reducers: {
         logout(state) {
             state.user = DEFAULT
-            localStorage.removeItem('memories-user-token')
+            removeUserToken()
+            // localStorage.removeItem('memories-user-token')
         }
     },
 

@@ -32,7 +32,9 @@ export function Navbar() {
 
     return (
         <Styles.Root>
-            <Styles.Title>Memories</Styles.Title>
+            <Link to="/">
+                <Styles.Title>Memories</Styles.Title>
+            </Link>
             { userData?._id ? (
                 <ClickAwayListener onClickAway={hideLogoutButton}>
                     <Styles.NameContainer>

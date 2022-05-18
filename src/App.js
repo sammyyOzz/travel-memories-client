@@ -10,12 +10,16 @@ import { getLoggedInUser } from './redux/auth/auth.slice';
 import ForgotPassword from './pages/auth/forgotPassword.component';
 import ResetPassword from './pages/auth/resetPassword.component';
 
+import { userToken } from './utils/services/auth.service'
+
 
 function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getLoggedInUser())
+    if (userToken) {
+      dispatch(getLoggedInUser())
+    }
   }, [dispatch])
 
   return (

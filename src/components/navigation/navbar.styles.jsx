@@ -11,6 +11,10 @@ export const Root = styled.div`
     padding: 0 20px;
     z-index: 1000;
     background-image: none;
+
+    & > a {
+        color: black;
+    }
 `
 
 export const Title = styled.div`

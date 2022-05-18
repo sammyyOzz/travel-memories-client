@@ -1,4 +1,5 @@
 import { HTTP_STATUS } from "../../utils/constants/httpStatus.constant"
+import { setUserToken } from "../../utils/services/auth.service"
 
 export const authUserPending = (state) => {
     state.user.status = HTTP_STATUS.PENDING
@@ -8,7 +9,7 @@ export const authUserFulfilled = (state, { payload }) => {
     state.user.status = HTTP_STATUS.FULFILLED
     state.user.data = payload.result
     state.user.error = null
-    localStorage.setItem('memories-user-token', JSON.stringify(payload.token))
+    setUserToken(payload.token)
 }
 
 export const authUserRejected = (state, { payload }) => {
