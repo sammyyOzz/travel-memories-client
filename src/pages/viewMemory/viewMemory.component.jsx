@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { AnimatedPage } from '../../components/animation/animatedPage.component'
 import { selectMemoryForDisplay } from '../../redux/memories/memories.selectors'
 import { MemoryCard } from '../../components/memoryCard/memoryCard.component'
+import { Chat } from '../../components/chat/chat.component'
 
 function ViewMemory() {
     const { data: memory } = useSelector(selectMemoryForDisplay)
@@ -19,7 +20,7 @@ function ViewMemory() {
                         </Styles.GridLeft>
 
                         <Styles.GridRight>
-                            {/* <NewMemoryForm /> */}
+                            <Chat />
                         </Styles.GridRight>
                     </Styles.GridContainer>
                 </Styles.Container>
