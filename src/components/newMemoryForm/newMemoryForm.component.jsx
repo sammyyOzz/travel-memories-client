@@ -11,7 +11,7 @@ import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
 
 
 export function NewMemoryForm() {
-    const defaultMemory = { place: "", description: "", image: "" }
+    const defaultMemory = { title: "", place: "", description: "", image: "" }
 
     /***********************************************************************
      * selectors
@@ -63,6 +63,7 @@ export function NewMemoryForm() {
         }
 
         const formData = new FormData()
+        formData.append('title', newMemory.title)
         formData.append('place', newMemory.place)
         formData.append('description', newMemory.description)
         formData.append('imageUrl', newMemory.image)
@@ -76,6 +77,15 @@ export function NewMemoryForm() {
             <Styles.Title>Post New Memories</Styles.Title>
 
             <Form handleSubmit={handleSubmit} encType='multipart/form-data'>
+                <FormControl 
+                  id="title"
+                  htmlFor="title"
+                  label="Title" 
+                  name="title" 
+                  value={newMemory.title}
+                  handleChange={handleInputChange} 
+                  required 
+                />
                 <FormControl 
                   id="place"
                   htmlFor="place"

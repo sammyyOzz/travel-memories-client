@@ -4,18 +4,22 @@ import { baseUrl } from '../../utils/services/axios'
 import { useDispatch } from 'react-redux';
 import { setMemoryForDisplay } from '../../redux/memories/memories.slice';
 import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom';
+import { defaultMemories } from '../../data/memories.data'
 
 
 
-export function MemoryCard({ _id, imageUrl, place, description, user: { name } }) {
+export function MemoryCard({ _id, title, imageUrl, place, description, user }) {
+
+    const navigate = useNavigate()
     
     const dispatch = useDispatch()
 
     const _setMemoryForDisplay = (data) => dispatch(setMemoryForDisplay(data))
 
-
     const handleClick = () => {
-        _setMemoryForDisplay({ _id, imageUrl, place, description, name })
+        _setMemoryForDisplay({ _id, title, imageUrl, place, description, user })
+        navigate(`/view-memory/${_id}`)
     }
 
     return (
@@ -25,15 +29,18 @@ export function MemoryCard({ _id, imageUrl, place, description, user: { name } }
             </Styles.ImageContainer>
             <Styles.Place>{ place }</Styles.Place>
             <Styles.Description>{ description }</Styles.Description>
-            <Styles.Footer>{ `--${name}--` }</Styles.Footer>
+            <Styles.Footer>{ `--${user.name}--` }</Styles.Footer>
         </Styles.Root>
     )
 }
 
 MemoryCard.defaultProps = {
     _id: `${Math.random()}`,
+    imageUrl: defaultMemories[0].url,
+    place: 'Hong Kong',
+    description: 'A nice place',
     user: {
-        name: PropTypes.string
+        name: "John Doe"
     }
 }
 

@@ -66,11 +66,11 @@ function Memories() {
                 </Styles.Root>
             </AnimatedPage>
 
-            { memoryForDisplay && (
+            {/* { memoryForDisplay && (
                 <TransitionsModal open={memoryForDisplay !== null} handleClose={handleModalClose}>
                     <MemoryForDisplay { ...memoryForDisplay } />
                 </TransitionsModal>
-            )}
+            )} */}
         </>
     )
 }

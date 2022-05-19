@@ -25,14 +25,14 @@ const memoriesSlice = createSlice({
     initialState: {
         memories: { ...DEFAULT, data: [] },
         saveMemory: DEFAULT,
-        memoryForDisplay: null,
+        memoryForDisplay: DEFAULT,
         comments: { ...DEFAULT, data: [] },
         createComment: DEFAULT,
     },
     
     reducers: {
         setMemoryForDisplay(state, { payload }) {
-            state.memoryForDisplay = payload
+            state.memoryForDisplay.data = payload
         },
         clearComments(state) {
             state.comments = { ...DEFAULT, data: [] }
