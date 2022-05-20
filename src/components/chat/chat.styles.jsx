@@ -62,7 +62,7 @@ export const Message = styled.div`
     display: flex;
     clear: both;
     max-width: 60%;
-    /* float: right; */
+    float: ${p => p.isSender && 'right'};
 `
 
 export const Name = styled.div`
@@ -77,7 +77,7 @@ export const MessageText = styled.div`
     background-color: #cfd8dc; 
     padding: 15px;
     color: black;
-    border-radius: 0px 20px 20px 20px;
+    border-radius: ${p => p.isSender ? '20px 0px 20px 20px' : '0px 20px 20px 20px'};
     font-size: 14px;
     position: relative;
 `

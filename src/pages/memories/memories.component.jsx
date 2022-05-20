@@ -10,7 +10,7 @@ import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
 import { getMemories, setMemoryForDisplay } from '../../redux/memories/memories.slice';
 import { AnimatedPage } from '../../components/animation/animatedPage.component';
 import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant';
-import { MemoryForDisplay } from '../../components/memoryForDisplay/memoryForDisplay.component';
+// import { MemoryForDisplay } from '../../components/memoryForDisplay/memoryForDisplay.component';
 
 import TransitionsModal from '../../components/modal/modal.component'
 

@@ -29,31 +29,31 @@ export const saveMemoryRejected = (state, { payload }) => {
     state.saveMemory.error = payload
 }
 
-export const getCommentsPending = (state) => {
-    state.comments.status = HTTP_STATUS.PENDING
+export const getMessagesPending = (state) => {
+    state.messages.status = HTTP_STATUS.PENDING
 }
 
-export const getCommentsFulfilled = (state, { payload }) => {
-    state.comments.status = HTTP_STATUS.FULFILLED
-    state.comments.data = payload
+export const getMessagesFulfilled = (state, { payload }) => {
+    state.messages.status = HTTP_STATUS.FULFILLED
+    state.messages.data = payload
 }
 
-export const getCommentsRejected = (state, { payload }) => {
-    state.comments.status = HTTP_STATUS.REJECTED
-    state.comments.error = payload
+export const getMessagesRejected = (state, { payload }) => {
+    state.messages.status = HTTP_STATUS.REJECTED
+    state.messages.error = payload
 }
 
-export const createCommentPending = (state) => {
-    state.createComment.status = HTTP_STATUS.PENDING
+export const createMessagePending = (state) => {
+    state.createMessage.status = HTTP_STATUS.PENDING
 }
 
-export const createCommentFulfilled = (state, { payload }) => {
-    state.createComment.status = HTTP_STATUS.FULFILLED
-    const oldComments = state.comments.data
-    state.comments.data = [ ...oldComments, payload ]
+export const createMessageFulfilled = (state, { payload }) => {
+    state.createMessage.status = HTTP_STATUS.FULFILLED
+    const oldMessages = state.messages.data
+    state.messages.data = [ ...oldMessages, payload ]
 }
 
-export const createCommentRejected = (state, { payload }) => {
-    state.createComment.status = HTTP_STATUS.REJECTED
-    state.createComment.error = payload
+export const createMessageRejected = (state, { payload }) => {
+    state.createMessage.status = HTTP_STATUS.REJECTED
+    state.createMessage.error = payload
 }

@@ -9,8 +9,8 @@ const namespace = 'memories'
  *************************************************************/
 export const getMemories = asyncRequest(`${namespace}/getMemories`, '/api/memory', 'get')
 export const saveMemory = asyncRequest(`${namespace}/saveMemory`, '/api/memory', 'post')
-export const getComments = asyncRequest(`${namespace}/getComments`, '/api/comment', 'get')
-export const createComment = asyncRequest(`${namespace}/createComment`, '/api/comment', 'post')
+export const getMessages = asyncRequest(`${namespace}/getMessages`, '/api/message', 'get')
+export const createMessage = asyncRequest(`${namespace}/createMessage`, '/api/message', 'post')
 
 
 
@@ -26,16 +26,16 @@ const memoriesSlice = createSlice({
         memories: { ...DEFAULT, data: [] },
         saveMemory: DEFAULT,
         memoryForDisplay: DEFAULT,
-        comments: { ...DEFAULT, data: [] },
-        createComment: DEFAULT,
+        messages: { ...DEFAULT, data: [] },
+        createMessage: DEFAULT,
     },
     
     reducers: {
         setMemoryForDisplay(state, { payload }) {
             state.memoryForDisplay.data = payload
         },
-        clearComments(state) {
-            state.comments = { ...DEFAULT, data: [] }
+        clearMessages(state) {
+            state.messages = { ...DEFAULT, data: [] }
         }
     },
 
@@ -48,20 +48,20 @@ const memoriesSlice = createSlice({
         [saveMemory.fulfilled]: asyncReducers.saveMemoryFulfilled,
         [saveMemory.rejected]: asyncReducers.saveMemoryRejected,
 
-        [getComments.pending]: asyncReducers.getCommentsPending,
-        [getComments.fulfilled]: asyncReducers.getCommentsFulfilled,
-        [getComments.rejected]: asyncReducers.getCommentsRejected,
+        [getMessages.pending]: asyncReducers.getMessagesPending,
+        [getMessages.fulfilled]: asyncReducers.getMessagesFulfilled,
+        [getMessages.rejected]: asyncReducers.getMessagesRejected,
 
-        [createComment.pending]: asyncReducers.createCommentPending,
-        [createComment.fulfilled]: asyncReducers.createCommentFulfilled,
-        [createComment.rejected]: asyncReducers.createCommentRejected,
+        [createMessage.pending]: asyncReducers.createMessagePending,
+        [createMessage.fulfilled]: asyncReducers.createMessageFulfilled,
+        [createMessage.rejected]: asyncReducers.createMessageRejected,
     }
 })
 
 export const { 
     addNewMemory, 
     setMemoryForDisplay,
-    clearComments 
+    clearMessages 
 
 } = memoriesSlice.actions
 

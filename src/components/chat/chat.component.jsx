@@ -4,8 +4,12 @@ import { useCallback, useEffect, useState } from 'react';
 import { Button } from '../button/button.component';
 import { Form } from '../form/form.component';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
+import { createMessage, getMessages } from '../../redux/memories/memories.slice';
+import { selectMessages } from '../../redux/memories/memories.selectors';
+import { MessageLoader } from '../loaders/messageLoader.component'
+import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant';
 
 const ENDPOINT = "http://localhost:5000";
 
@@ -14,13 +18,32 @@ let socket;
 export function Chat() {
     const { id: roomID } = useParams()
 
+    /***********************************************************************
+    * selectors
+    ***********************************************************************/
     const { data: userData } = useSelector(selectLoggedInUser)
+    const { status: messagesStatus } = useSelector(selectMessages)
 
+    /***********************************************************************
+    * state
+    ***********************************************************************/
     const [messages, setMessages] = useState([])
     const [newMessage, setNewMessage] = useState('')
 
-    console.log(messages)
+    /***********************************************************************
+    * dispatch
+    ***********************************************************************/
+    const dispatch = useDispatch()
 
+    const _getMessages = (data) => dispatch(getMessages(data)).unwrap().then(data => setMessages(data))
+    const _createMessage = (data) => dispatch(createMessage(data))
+
+    /***********************************************************************
+    * hooks
+    ***********************************************************************/
+    useEffect(() => {
+        _getMessages({ urlParams: `/${roomID}` })
+    }, [])
 
     useEffect(() => {
         socket = socketIOClient(ENDPOINT, { withCredentials: true });
@@ -30,20 +53,22 @@ export function Chat() {
         return () => socket.disconnect();
     }, []);
 
-
+    /***********************************************************************
+    * handlers
+    ***********************************************************************/
     const handleSendMessage = (e) => {
         e.preventDefault();
 
         const messageData = {
             _id: `${Date.now()}-${userData?._id}`, 
             body: newMessage, 
-            user: { name: userData?.name } 
+            user: { _id: userData?._id, name: userData?.name } 
         }
 
         socket.emit('new_message', { room: roomID, messageData })
         setNewMessage('')
 
-        // _createMessage({ body: newComment, urlParams: `/${userData?._id}` })
+        _createMessage({ body: newMessage, urlParams: `/${roomID}` })
     }
 
     return (
@@ -54,7 +79,7 @@ export function Chat() {
             </Styles.TitleContainer>
 
             <Styles.Body>
-                <ListMessages messages={messages} />
+                <ListMessages messages={messages} loading={messagesStatus === HTTP_STATUS.PENDING} userData={userData} />
             </Styles.Body>
 
             <Styles.InputContainer>
@@ -70,23 +95,27 @@ export function Chat() {
     )
 }
 
-function ListMessages({ messages }) {
+function ListMessages({ messages, loading, ...props }) {
 
-    return (
+    return !loading ? (
         <>
             { messages.map((message) => (
-                <Message key={message._id} { ...message } />
+                <Message key={message._id} { ...message } { ...props } />
             )) }
         </>
+    ) : (
+        <MessageLoader />
     )
 }
 
-function Message({ body, user }) {
+function Message({ body, user, userData }) {
 
+    const isSender = userData?._id === user?._id
+    
     return (
-        <Styles.Message>
-            <Styles.MessageText>
-                <Styles.Name>{ user.name }</Styles.Name>
+        <Styles.Message isSender={isSender}>
+            <Styles.MessageText isSender={isSender}>
+                { !isSender && <Styles.Name>{ user.name }</Styles.Name> }
                 { body }
                 {/* <Styles.Time>5:00</Styles.Time> */}
             </Styles.MessageText>
