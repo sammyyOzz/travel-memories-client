@@ -2,9 +2,10 @@ import styled, { css } from 'styled-components'
 
 export const Root = styled.div`
     box-shadow: 0 7px 10px #abacad;
-    border-radius: 30px;
+    border-radius: 5px;
     background-color: white;
-    min-height: 500px;
+    /* min-height: 500px; */
+    height: 100%;
     position: relative;
 `
 

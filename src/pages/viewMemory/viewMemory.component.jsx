@@ -13,9 +13,10 @@ function ViewMemory() {
         <AnimatedPage>
             <Styles.Root>
                 <Styles.Container>
-                    <Styles.Title>{ memory?.place }</Styles.Title>
+                    
                     <Styles.GridContainer>
                         <Styles.GridLeft>
+                            <Styles.Title>{ memory?.place }</Styles.Title>
                             <MemoryCard { ...memory } />
                         </Styles.GridLeft>
 

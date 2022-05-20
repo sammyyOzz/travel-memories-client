@@ -2,12 +2,17 @@ import styled from 'styled-components'
 
 export const Root = styled.div`
     display: flex;
-    justify-content: center;
-    padding: 50px 0;
+    /* justify-content: center; */
+    /* padding: 50px 0; */
+    height: calc(100vh - 70px);
+
+    @media(max-width: ${p => p.theme.breakpoints.md}) {
+        height: auto;
+    }
 `
 
 export const Container = styled.div`
-    width: 80%;
+    /* width: 80%; */
 `
 
 export const Title = styled.h1`
@@ -18,7 +23,9 @@ export const Title = styled.h1`
 export const GridContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    margin: 50px auto 20px auto;
+    /* background-color: red; */
+    height: 100%;
+    /* margin: 50px auto 20px auto; */
 
     @media(max-width: ${p => p.theme.breakpoints.md}) {
         flex-direction: column;
@@ -38,6 +45,7 @@ export const GridRight = styled.div`
 
     @media(max-width: ${p => p.theme.breakpoints.md}) {
         width: 100%;
+        height: 100vh;
         margin-top: 50px;
     }
 `

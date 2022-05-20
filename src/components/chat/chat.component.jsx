@@ -16,16 +16,16 @@ export function Chat() {
 
     const { data: userData } = useSelector(selectLoggedInUser)
 
-    const [response, setResponse] = useState("");
-
     const [messages, setMessages] = useState([])
     const [newMessage, setNewMessage] = useState('')
+
+    console.log(messages)
 
 
     useEffect(() => {
         socket = socketIOClient(ENDPOINT, { withCredentials: true });
         socket.emit('setup', { room: roomID })
-        socket.on("message", data => setMessages(prevState => [...prevState, data]));
+        socket.on("message", (newMessageReceived) => setMessages(prevMessages => [...prevMessages, newMessageReceived]));
 
         return () => socket.disconnect();
     }, []);
@@ -34,8 +34,16 @@ export function Chat() {
     const handleSendMessage = (e) => {
         e.preventDefault();
 
-        socket.emit('new_message', { room: roomID, newMessage })
+        const messageData = {
+            _id: `${Date.now()}-${userData?._id}`, 
+            body: newMessage, 
+            user: { name: userData?.name } 
+        }
+
+        socket.emit('new_message', { room: roomID, messageData })
         setNewMessage('')
+
+        // _createMessage({ body: newComment, urlParams: `/${userData?._id}` })
     }
 
     return (
@@ -66,21 +74,21 @@ function ListMessages({ messages }) {
 
     return (
         <>
-            { messages.map((message, i) => (
-                <Message key={i} message={message} />
+            { messages.map((message) => (
+                <Message key={message._id} { ...message } />
             )) }
         </>
     )
 }
 
-function Message({ message }) {
+function Message({ body, user }) {
 
     return (
         <Styles.Message>
             <Styles.MessageText>
-                <Styles.Name>Samuel</Styles.Name>
-                { message }
-                <Styles.Time>5:00</Styles.Time>
+                <Styles.Name>{ user.name }</Styles.Name>
+                { body }
+                {/* <Styles.Time>5:00</Styles.Time> */}
             </Styles.MessageText>
         </Styles.Message>
     )
