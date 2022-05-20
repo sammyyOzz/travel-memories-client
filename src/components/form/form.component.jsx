@@ -1,6 +1,7 @@
 import React from 'react'
 import * as Styles from './form.styles'
 import PropTypes from 'prop-types'
+import selectedIcon from '../../assets/icons/selected.png'
 
 export function FormControl({ label, htmlFor, name, handleChange, textarea, error, ...inputProps }) {
 
@@ -18,6 +19,7 @@ export function FormControl({ label, htmlFor, name, handleChange, textarea, erro
                     />
                 ) : (
                     <Styles.Textarea 
+                        name={name}
                         onChange={handleChange}
                         error={error}
                         { ...inputProps }
@@ -37,6 +39,20 @@ export function Form({ children, handleSubmit, ...props }) {
         <Styles.Form data-testid="form" onSubmit={handleSubmit} { ...props }>
             { children }
         </Styles.Form>
+    )
+}
+
+
+export function RadioButton({ selected, handleClick, label }) {
+
+    return (
+        <Styles.RadioButton onClick={handleClick} selected={selected}>
+            { selected 
+                ? <Styles.RadioButtonImage src={selectedIcon} alt="" />
+                : <Styles.RadioButtonNotSelected />
+            }
+            <Styles.RadioButtonText>{ label }</Styles.RadioButtonText>
+        </Styles.RadioButton>
     )
 }
 

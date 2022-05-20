@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 import { Button } from '../button/button.component'
-import { Form, FormControl } from '../form/form.component'
+import { Form, FormControl, RadioButton } from '../form/form.component'
 import * as Styles from './newMemoryForm.styles'
 
 import { saveMemory } from '../../redux/memories/memories.slice'
@@ -31,6 +31,7 @@ export function NewMemoryForm() {
     * state and refs
     ***********************************************************************/
     const [newMemory, setNewMemory] = useState(defaultMemory)
+    const [isPublic, setIsPublic] = useState(true)
     const [noImageError, setNoImageError] = useState(false)
 
     const hiddenInputRef = useRef()
@@ -67,9 +68,15 @@ export function NewMemoryForm() {
         formData.append('place', newMemory.place)
         formData.append('description', newMemory.description)
         formData.append('imageUrl', newMemory.image)
+        formData.append('public', isPublic)
+
+        // for (let pair of formData.entries()) {
+        //     console.log(pair[0]+ ', ' + pair[1]);
+        // }
 
         _addNewMemory(formData)
         setNewMemory(defaultMemory)
+        setIsPublic(true)
     }
 
     return (
@@ -115,6 +122,17 @@ export function NewMemoryForm() {
                 <Button type="button" onClick={handleUploadImageButtonClick}>Upload Image</Button>
                 { newMemory.image.name && <Styles.ImageName>{newMemory.image.name}</Styles.ImageName> }
                 { noImageError && <Styles.ImageName style={{ color: 'red' }}>{noImageError}</Styles.ImageName> }
+
+                <RadioButton 
+                    label="Public"
+                    selected={isPublic}
+                    handleClick={() => setIsPublic(prevState => !prevState)}
+                />
+                <RadioButton 
+                    label="Private"
+                    selected={!isPublic}
+                    handleClick={() => setIsPublic(prevState => !prevState)}
+                />
                 
                 <Button 
                     fullWidth 

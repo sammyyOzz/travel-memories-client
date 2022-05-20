@@ -45,3 +45,48 @@ export const Error = styled.p`
 export const Form = styled.form`
     
 `
+
+export const RadioButtonSelected = css`
+    translate: 15px;
+`
+
+export const RadioButton = styled.div`
+    border-radius: 10px;
+    padding: 8px;
+    background-color: white;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px 3px rgb(233, 235, 243);
+    transition: 200ms linear all;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    /* ${p => p.selected && RadioButtonSelected} */
+
+`
+
+export const RadioButtonRadio = css`
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    border: 4px solid rgb(184, 182, 182);
+    margin-right: 30px;
+    box-sizing: border-box;
+`
+
+export const RadioButtonNotSelected = styled.div`
+    ${RadioButtonRadio};
+`
+
+export const RadioButtonText = styled.div`
+    font-size: 18px;
+    color: #5e5c5c;
+    font-weight: 500;
+`
+
+export const RadioButtonImage = styled.img`
+    ${RadioButtonRadio};
+    border: 4px solid transparent;
+`
