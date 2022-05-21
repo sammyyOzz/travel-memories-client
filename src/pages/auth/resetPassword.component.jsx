@@ -11,6 +11,7 @@ import { resetPassword } from '../../redux/auth/auth.slice'
 
 import { AnimatedPage } from '../../components/animation/animatedPage.component'
 import { useLocation } from 'react-router-dom'
+import { Layout } from '../../components/layout/layout.component'
  
 
 function ResetPassword() {
@@ -79,7 +80,7 @@ function ResetPassword() {
     }
 
     return (
-        <AnimatedPage>
+        <Layout hideSidePanel>
             <Styles.Root>
                 <Styles.FormContainer>
                     <Styles.Title>Reset Password</Styles.Title>
@@ -110,7 +111,7 @@ function ResetPassword() {
                     </Form>
                 </Styles.FormContainer>
             </Styles.Root>
-        </AnimatedPage>
+        </Layout>
     )
 }
 

@@ -6,7 +6,7 @@ export const Root = styled.div`
 
 export const Label = styled.label`
     font-size: 18px;
-    color: #5e5c5c;
+    color: #cac7c7;
     font-weight: 500;
 `
 
@@ -15,14 +15,16 @@ const inputAndTextareaStyle = css`
     width: 100%;
     height: 40px;
     border-radius: 8px;
-    border: ${p => p.error ? '3px solid red' : '3px solid #b6b4b4'};
+    border: ${p => p.error ? '1px solid red' : '1px solid #b6b4b4'};
     padding: 0 8px;
     margin-top: 5px;
     font-size: 16px;
+    background-color: transparent;
+    color: white;
 
     &:focus {
         outline: none;
-        border: ${p => p.error ? '3px solid red' : '3px solid black'};
+        border: ${p => p.error ? '1px solid red' : '1px solid skyblue'};
     }
 `
 
@@ -53,11 +55,11 @@ export const RadioButtonSelected = css`
 export const RadioButton = styled.div`
     border-radius: 10px;
     padding: 8px;
-    background-color: white;
+    background-color: transparent;
     box-sizing: border-box;
     position: relative;
     cursor: pointer;
-    box-shadow: 0px 4px 8px 3px rgb(233, 235, 243);
+    box-shadow: 0px 2px 4px skyblue;
     transition: 200ms linear all;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -82,7 +84,7 @@ export const RadioButtonNotSelected = styled.div`
 
 export const RadioButtonText = styled.div`
     font-size: 18px;
-    color: #5e5c5c;
+    color: white;
     font-weight: 500;
 `
 

@@ -5,17 +5,18 @@ export const Root = styled.button`
     padding: 10px 20px;
     border-radius: 8px;
     margin: 10px 0 5px 0;
-    border: none;
-    box-shadow: 2px 4px 5px #cccaca;
+    border: 1px solid white;
+    /* box-shadow: 2px 4px 5px #cccaca; */
     font-weight: bold;
     font-size: 15px;
     text-transform: uppercase;
     cursor: pointer;
     transition: 250ms linear all;
-    background-color: #d4d1d1;
+    background-color: transparent;
+    color: white;
 
     &:hover {
-        background-color: gray;
+        background-color: #373e6656;
         color: white;
         transition: 250ms linear all;
     }

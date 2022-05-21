@@ -1,12 +1,16 @@
 import styled, { css } from 'styled-components'
 
 export const Root = styled.div`
-    box-shadow: 0 7px 10px #abacad;
+    box-shadow: 0 7px 10px skyblue;
     border-radius: 5px;
-    background-color: white;
+    background-color: transparent;
     /* min-height: 500px; */
     height: 100%;
     position: relative;
+
+    @media(max-width: ${p => p.theme.breakpoints.md}) {
+        border-radius: 0;
+    }
 `
 
 export const TitleContainer = styled.div`
@@ -17,7 +21,7 @@ export const TitleContainer = styled.div`
     border-bottom: 1px solid gray;
     box-sizing: border-box;
     padding: 20px;
-    
+    color: white;
 `
 
 export const Body = styled.div`
@@ -28,6 +32,10 @@ export const Body = styled.div`
     padding: 20px 40px;
     overflow-y: scroll;
     height: calc(100% - 140px);
+
+    @media(max-width: ${p => p.theme.breakpoints.md}) {
+        padding: 20px 10px;
+    }
 `
 
 export const InputContainer = styled.div`
@@ -47,12 +55,13 @@ export const Input = styled.input`
     box-sizing: border-box;
     padding: 10px;
     font-size: 18px;
-    color: #1d1c1c;
-    border: 2px solid gray;
+    color: white;
+    border: 1px solid gray;
+    background-color: transparent;
 
     &:focus {
         outline: none;
-        border: 2px solid #1d1c1c;
+        border: 1px solid skyblue;
     }
 `
 

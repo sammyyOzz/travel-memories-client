@@ -5,28 +5,26 @@ import { AnimatedPage } from '../../components/animation/animatedPage.component'
 import { selectMemoryForDisplay } from '../../redux/memories/memories.selectors'
 import { MemoryCard } from '../../components/memoryCard/memoryCard.component'
 import { Chat } from '../../components/chat/chat.component'
+import { Layout } from '../../components/layout/layout.component'
 
 function ViewMemory() {
     const { data: memory } = useSelector(selectMemoryForDisplay)
 
     return (
-        <AnimatedPage>
+        <Layout hideSidePanel removePadding>
             <Styles.Root>
-                <Styles.Container>
-                    
-                    <Styles.GridContainer>
-                        <Styles.GridLeft>
-                            <Styles.Title>{ memory?.place }</Styles.Title>
-                            <MemoryCard { ...memory } />
-                        </Styles.GridLeft>
+                <Styles.Left>
+                    <Styles.LeftBody>
+                        <Styles.Title>{ memory?.place }</Styles.Title>
+                        <MemoryCard { ...memory } />
+                    </Styles.LeftBody>
+                </Styles.Left>
 
-                        <Styles.GridRight>
-                            <Chat />
-                        </Styles.GridRight>
-                    </Styles.GridContainer>
-                </Styles.Container>
+                <Styles.Right>
+                    <Chat { ...memory }/>
+                </Styles.Right>
             </Styles.Root>
-        </AnimatedPage>
+        </Layout>
     )
 }
 

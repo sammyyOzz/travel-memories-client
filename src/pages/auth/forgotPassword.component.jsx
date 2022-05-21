@@ -11,6 +11,7 @@ import { forgotPassword } from '../../redux/auth/auth.slice'
 
 import { useNavigate } from 'react-router-dom'
 import { AnimatedPage } from '../../components/animation/animatedPage.component'
+import { Layout } from '../../components/layout/layout.component'
  
 
 function ForgotPassword() {
@@ -65,7 +66,7 @@ function ForgotPassword() {
     }
 
     return (
-        <AnimatedPage>
+        <Layout hideSidePanel>
             <Styles.Root>
                 <Styles.FormContainer>
                     <Styles.Title>Forgot Password</Styles.Title>
@@ -91,7 +92,7 @@ function ForgotPassword() {
                     </Styles.Footer>
                 </Styles.FormContainer>
             </Styles.Root>
-        </AnimatedPage>
+        </Layout>
     )
 }
 

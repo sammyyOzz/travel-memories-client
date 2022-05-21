@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const Root = styled.div`
     height: 70px;
-    box-shadow: 0 10px 10px 5px #a5a3a39b;
+    /* box-shadow: 0 10px 10px 5px #a5a3a39b; */
+    border-bottom: 1px solid gray;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -22,6 +23,7 @@ export const Title = styled.div`
     font-weight: bold;
     text-transform: uppercase;
     font-style: italic;
+    color: white;
 `
 
 export const Login = styled.div`
@@ -29,7 +31,7 @@ export const Login = styled.div`
     font-weight: bold;
     margin-right: 50px;
     cursor: pointer;
-    color: black;
+    color: white;
 `
 
 export const NameContainer = styled.div`
@@ -47,5 +49,5 @@ export const Name = styled.div`
     width: 150px;
     cursor: pointer;
     font-weight: bold;
-
+    color: white;
 `

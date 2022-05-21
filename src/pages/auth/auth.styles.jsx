@@ -4,16 +4,15 @@ export const Root = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
-    /* background-color: red; */
+    padding-top: 50px;
 `
 
 export const FormContainer = styled.div`
     box-sizing: border-box;
     padding: 30px 25px;
-    box-shadow: 0 7px 10px #abacad;
+    box-shadow: 0 4px 10px skyblue;
     border-radius: 20px;
-    background-color: white;
+    background-color: transparent;
     margin-bottom: 50px;
     width: 40%;
 
@@ -28,6 +27,7 @@ export const FormContainer = styled.div`
 
 export const Title = styled.h1`
     text-align: center;
+    color: white;
 `
 
 export const Footer = styled.div`
@@ -41,6 +41,7 @@ export const Footer = styled.div`
 export const FooterElement = styled.div`
     cursor: pointer;
     text-decoration: underline;
+    color: white;
 `
 
 export const Error = styled.p`

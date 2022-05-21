@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
 import { Button } from '../button/button.component';
 import * as Styles from './navbar.styles'
@@ -10,6 +10,7 @@ import { logout } from '../../redux/auth/auth.slice';
 
 export function Navbar() {
     const { pathname } = useLocation()
+    const navigate = useNavigate()
 
     const { data: userData } = useSelector(selectLoggedInUser)
 
@@ -27,6 +28,7 @@ export function Navbar() {
 
     const handleLogout = () => {
         _logout();
+        navigate('/')
         hideLogoutButton();
     }
 
@@ -35,7 +37,7 @@ export function Navbar() {
             <Link to="/">
                 <Styles.Title>Memories</Styles.Title>
             </Link>
-            { userData?._id ? (
+            { userData?._id && (
                 <ClickAwayListener onClickAway={hideLogoutButton}>
                     <Styles.NameContainer>
                         <Styles.Name data-testid="user-logged-in" onClick={showLogoutButton}>{ `Hi, ${userData.name}` }</Styles.Name>
@@ -44,10 +46,6 @@ export function Navbar() {
                         )}
                     </Styles.NameContainer>
                 </ClickAwayListener>
-            ) : (
-                <Link to={ pathname === '/memories' ? '/auth' : '/memories'} data-testid="user-logged-out">
-                    <Styles.Login>{ pathname === '/memories' ? 'Login' : 'Memories' }</Styles.Login>
-                </Link>
             )}
         </Styles.Root>
     )

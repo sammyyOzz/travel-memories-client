@@ -13,6 +13,7 @@ import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
 
 import { useNavigate } from 'react-router-dom'
 import { AnimatedPage } from '../../components/animation/animatedPage.component'
+import { Layout } from '../../components/layout/layout.component'
  
 
 function Auth() {
@@ -102,7 +103,7 @@ function Auth() {
     }
 
     return (
-        <AnimatedPage>
+        <Layout hideSidePanel>
             <Styles.Root>
                 <Styles.FormContainer>
                     <Styles.Title>{ isSignup ? 'Sign Up' : 'Login' }</Styles.Title>
@@ -157,7 +158,7 @@ function Auth() {
                     </Styles.Footer>
                 </Styles.FormContainer>
             </Styles.Root>
-        </AnimatedPage>
+        </Layout>
     )
 }
 

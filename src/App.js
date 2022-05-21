@@ -8,11 +8,12 @@ import { getLoggedInUser } from './redux/auth/auth.slice';
 
 import { userToken } from './utils/services/auth.service'
 
-import Memories from './pages/memories/memories.component';
 import Auth from './pages/auth/auth.component';
 import ForgotPassword from './pages/auth/forgotPassword.component';
 import ResetPassword from './pages/auth/resetPassword.component';
 import ViewMemory from './pages/viewMemory/viewMemory.component';
+import Home from './pages/home/home.component';
+import { Private } from './utils/services/privateRoute.service';
 
 
 function App() {
@@ -26,15 +27,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <Routes>
-        <Route path="/" element={<Navigate to="/memories" />} />
-        <Route index path="memories" element={<Memories />} />
+        <Route index path="/" element={<Home />} />
         <Route path="auth" element={<Auth />} />
         <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="reset-password" element={<ResetPassword />} />
-        <Route path="/view-memory/:id" element={<ViewMemory />} />
+        <Route path="/view-memory/:id" element={<Private><ViewMemory /></Private>} />
       </Routes>
     </BrowserRouter>
   );

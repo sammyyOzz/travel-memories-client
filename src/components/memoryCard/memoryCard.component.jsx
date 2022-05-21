@@ -9,7 +9,7 @@ import { defaultMemories } from '../../data/memories.data'
 
 
 
-export function MemoryCard({ _id, title, imageUrl, place, description, user }) {
+export function MemoryCard({ _id, title, imageUrl, experience, user }) {
 
     const navigate = useNavigate()
     
@@ -18,7 +18,7 @@ export function MemoryCard({ _id, title, imageUrl, place, description, user }) {
     const _setMemoryForDisplay = (data) => dispatch(setMemoryForDisplay(data))
 
     const handleClick = () => {
-        _setMemoryForDisplay({ _id, title, imageUrl, place, description, user })
+        _setMemoryForDisplay({ _id, title, imageUrl, experience, user })
         navigate(`/view-memory/${_id}`)
     }
 
@@ -27,8 +27,8 @@ export function MemoryCard({ _id, title, imageUrl, place, description, user }) {
             <Styles.ImageContainer>
                 <Styles.Image src={`${baseUrl}/images/${imageUrl}`} alt="" />
             </Styles.ImageContainer>
-            <Styles.Place>{ place }</Styles.Place>
-            <Styles.Description>{ description }</Styles.Description>
+            <Styles.Place>{ title }</Styles.Place>
+            <Styles.Description>{ experience }</Styles.Description>
             <Styles.Footer>{ `--${user.name}--` }</Styles.Footer>
         </Styles.Root>
     )
@@ -37,8 +37,8 @@ export function MemoryCard({ _id, title, imageUrl, place, description, user }) {
 MemoryCard.defaultProps = {
     _id: `${Math.random()}`,
     imageUrl: defaultMemories[0].url,
-    place: 'Hong Kong',
-    description: 'A nice place',
+    title: 'Hong Kong',
+    experience: 'A nice place',
     user: {
         name: "John Doe"
     }
@@ -47,7 +47,7 @@ MemoryCard.defaultProps = {
 MemoryCard.propTypes = {
     _id: PropTypes.string.isRequired,
     imageUrl: PropTypes.string,
-    place: PropTypes.string,
-    description: PropTypes.string,
+    title: PropTypes.string,
+    experience: PropTypes.string,
     user: PropTypes.object
 }

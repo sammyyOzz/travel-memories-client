@@ -11,11 +11,13 @@ import { selectMessages } from '../../redux/memories/memories.selectors';
 import { MessageLoader } from '../loaders/messageLoader.component'
 import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant';
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = process.env.NODE_ENV === 'production' 
+    ? "https://samuel-memories.herokuapp.com"
+    : "http://localhost:5000"
 
 let socket;
 
-export function Chat() {
+export function Chat({ title }) {
     const { id: roomID } = useParams()
 
     /***********************************************************************
@@ -74,7 +76,7 @@ export function Chat() {
     return (
         <Styles.Root>
             <Styles.TitleContainer>
-                <h2>Title</h2>
+                <h2>{title}</h2>
                 
             </Styles.TitleContainer>
 

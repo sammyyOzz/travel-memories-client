@@ -11,7 +11,7 @@ import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
 
 
 export function NewMemoryForm() {
-    const defaultMemory = { title: "", place: "", description: "", image: "" }
+    const defaultMemory = { title: "", experience: "", image: "" }
 
     /***********************************************************************
      * selectors
@@ -65,8 +65,7 @@ export function NewMemoryForm() {
 
         const formData = new FormData()
         formData.append('title', newMemory.title)
-        formData.append('place', newMemory.place)
-        formData.append('description', newMemory.description)
+        formData.append('experience', newMemory.experience)
         formData.append('imageUrl', newMemory.image)
         formData.append('public', isPublic)
 
@@ -94,20 +93,11 @@ export function NewMemoryForm() {
                   required 
                 />
                 <FormControl 
-                  id="place"
-                  htmlFor="place"
-                  label="Place" 
-                  name="place" 
-                  value={newMemory.place}
-                  handleChange={handleInputChange} 
-                  required 
-                />
-                <FormControl 
-                  id="description"
-                  htmlFor="description"
-                  label="Description" 
-                  name="description" 
-                  value={newMemory.description}
+                  id="experience"
+                  htmlFor="experience"
+                  label="Experience" 
+                  name="experience" 
+                  value={newMemory.experience}
                   handleChange={handleInputChange} 
                   textarea 
                   required 
@@ -123,7 +113,7 @@ export function NewMemoryForm() {
                 { newMemory.image.name && <Styles.ImageName>{newMemory.image.name}</Styles.ImageName> }
                 { noImageError && <Styles.ImageName style={{ color: 'red' }}>{noImageError}</Styles.ImageName> }
 
-                <RadioButton 
+                {/* <RadioButton 
                     label="Public"
                     selected={isPublic}
                     handleClick={() => setIsPublic(prevState => !prevState)}
@@ -132,7 +122,7 @@ export function NewMemoryForm() {
                     label="Private"
                     selected={!isPublic}
                     handleClick={() => setIsPublic(prevState => !prevState)}
-                />
+                /> */}
                 
                 <Button 
                     fullWidth 
