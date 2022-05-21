@@ -11,7 +11,7 @@ import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
 
 
 export function NewMemoryForm() {
-    const defaultMemory = { title: "", experience: "", image: "" }
+    const defaultMemory = { title: "", experience: "", image: "", isPublic: true }
 
     /***********************************************************************
      * selectors
@@ -67,7 +67,7 @@ export function NewMemoryForm() {
         formData.append('title', newMemory.title)
         formData.append('experience', newMemory.experience)
         formData.append('imageUrl', newMemory.image)
-        formData.append('public', isPublic)
+        formData.append('isPublic', isPublic)
 
         // for (let pair of formData.entries()) {
         //     console.log(pair[0]+ ', ' + pair[1]);
@@ -113,7 +113,7 @@ export function NewMemoryForm() {
                 { newMemory.image.name && <Styles.ImageName>{newMemory.image.name}</Styles.ImageName> }
                 { noImageError && <Styles.ImageName style={{ color: 'red' }}>{noImageError}</Styles.ImageName> }
 
-                {/* <RadioButton 
+                <RadioButton 
                     label="Public"
                     selected={isPublic}
                     handleClick={() => setIsPublic(prevState => !prevState)}
@@ -122,7 +122,7 @@ export function NewMemoryForm() {
                     label="Private"
                     selected={!isPublic}
                     handleClick={() => setIsPublic(prevState => !prevState)}
-                /> */}
+                />
                 
                 <Button 
                     fullWidth 

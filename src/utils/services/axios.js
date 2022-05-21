@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { userToken } from './auth.service'
 
 export const baseUrl = process.env.NODE_ENV === 'production' 
     ? "https://samuel-memories.herokuapp.com"
@@ -8,8 +9,8 @@ const API = axios.create({ baseURL: baseUrl })
 
 API.interceptors.request.use(req => {
 
-    if (localStorage.getItem('memories-user-token')) {
-        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('memories-user-token'))}`
+    if (userToken) {
+        req.headers.Authorization = `Bearer ${JSON.parse(userToken)}`
     }
 
     return req
