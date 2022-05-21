@@ -36,6 +36,12 @@ const memoriesSlice = createSlice({
         },
         clearMessages(state) {
             state.messages = { ...DEFAULT, data: [] }
+        },
+        addUserIDToAuthorized(state, { payload }) {
+            const memoryIndex = state.memories.data.findIndex(memory => memory._id === payload.memoryID)
+            let memory = state.memories.data[memoryIndex]
+            memory.authorized = [...memory.authorized, payload.userID]
+            state.memories.data[memoryIndex] = memory
         }
     },
 
@@ -61,7 +67,8 @@ const memoriesSlice = createSlice({
 export const { 
     addNewMemory, 
     setMemoryForDisplay,
-    clearMessages 
+    clearMessages,
+    addUserIDToAuthorized
 
 } = memoriesSlice.actions
 
