@@ -32,7 +32,7 @@ function App() {
         <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="reset-password" element={<ResetPassword />} />
         <Route path="/view-memory/:id" element={<Private><ViewMemory /></Private>} />
-        <Route path="/payment/:id" element={<Stripe />} />
+        <Route path="/payment/:id" element={<Private><Stripe /></Private>} />
       </Routes>
     </BrowserRouter>
   );

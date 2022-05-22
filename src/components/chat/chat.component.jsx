@@ -55,6 +55,11 @@ export function Chat({ title }) {
         return () => socket.disconnect();
     }, []);
 
+    useEffect(() => {
+        const element = document.getElementById("dummy");
+        element.scrollIntoView({ behavior: "smooth" });
+    }, [messages])
+
     /***********************************************************************
     * handlers
     ***********************************************************************/
@@ -82,6 +87,7 @@ export function Chat({ title }) {
 
             <Styles.Body>
                 <ListMessages messages={messages} loading={messagesStatus === HTTP_STATUS.PENDING} userData={userData} />
+                <div id="dummy" />
             </Styles.Body>
 
             <Styles.InputContainer>
