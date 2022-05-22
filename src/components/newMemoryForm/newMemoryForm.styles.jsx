@@ -19,6 +19,7 @@ export const ImageName = styled.p`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: white;
 `
 
 export const Info = styled.p`

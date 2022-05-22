@@ -7,6 +7,11 @@ import { placeholderImages } from '../data/placeholderImages.data'
 export function useCheckImageLinkIsValid(imageUrl) {
     const [validImageUrl, setValidImageUrl] = useState('')
 
+    const replaceBrokenImageLink = () => {
+        const index = Math.floor(Math.random() * 10)
+        setValidImageUrl(placeholderImages[index])
+    }
+
     useEffect(() => {
         axios
             .get(`${baseUrl}/images/${imageUrl}`)
@@ -14,9 +19,11 @@ export function useCheckImageLinkIsValid(imageUrl) {
                 if (res.status === 200) {
                     setValidImageUrl(`${baseUrl}/images/${imageUrl}`)
                 } else {
-                    const index = Math.floor(Math.random() * 10)
-                    setValidImageUrl(placeholderImages[index])
+                    replaceBrokenImageLink()
                 }
+            })
+            .catch(() => {
+                replaceBrokenImageLink()
             })
     }, [])
 
