@@ -21,7 +21,7 @@ function ViewMemory() {
                 </Styles.Left>
 
                 <Styles.Right>
-                    <Chat { ...memory }/>
+                    <Chat { ...memory } />
                 </Styles.Right>
             </Styles.Root>
         </Layout>

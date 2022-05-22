@@ -111,18 +111,20 @@ export function NewMemoryForm() {
               />
                 <Button type="button" onClick={handleUploadImageButtonClick}>Upload Image</Button>
                 { newMemory.image.name && <Styles.ImageName>{newMemory.image.name}</Styles.ImageName> }
-                { noImageError && <Styles.ImageName style={{ color: 'red' }}>{noImageError}</Styles.ImageName> }
+                { noImageError && <Styles.ImageName style={{ color: 'red' }}>{ noImageError }</Styles.ImageName> }
 
                 <RadioButton 
                     label="Public"
                     selected={isPublic}
                     handleClick={() => setIsPublic(prevState => !prevState)}
                 />
+                <Styles.Info>This post will be made available to everyone.</Styles.Info>
                 <RadioButton 
                     label="Private"
                     selected={!isPublic}
                     handleClick={() => setIsPublic(prevState => !prevState)}
                 />
+                <Styles.Info>Be informed, anyone who pays to view this post will have access to it.</Styles.Info>
                 
                 <Button 
                     fullWidth 

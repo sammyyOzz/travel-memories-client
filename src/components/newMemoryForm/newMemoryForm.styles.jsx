@@ -20,3 +20,9 @@ export const ImageName = styled.p`
     overflow: hidden;
     text-overflow: ellipsis;
 `
+
+export const Info = styled.p`
+    color: white;
+    font-size: 13px;
+    margin-top: -23px;
+`

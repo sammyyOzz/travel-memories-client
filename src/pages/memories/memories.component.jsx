@@ -5,14 +5,11 @@ import { ListMemories } from '../../components/listMemories/listMemories.compone
 import { NewMemoryForm } from '../../components/newMemoryForm/newMemoryForm.component';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { selectMemories, selectMemoryForDisplay } from '../../redux/memories/memories.selectors';
+import { selectMemories } from '../../redux/memories/memories.selectors';
 import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
-import { getMemories, setMemoryForDisplay } from '../../redux/memories/memories.slice';
+import { getMemories } from '../../redux/memories/memories.slice';
 import { AnimatedPage } from '../../components/animation/animatedPage.component';
 import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant';
-// import { MemoryForDisplay } from '../../components/memoryForDisplay/memoryForDisplay.component';
-
-import TransitionsModal from '../../components/modal/modal.component'
 
 
 function Memories() {
@@ -21,7 +18,6 @@ function Memories() {
      *************************************************************/
     const { data: memories, status } = useSelector(selectMemories)
     const { data: userData } = useSelector(selectLoggedInUser)
-    const memoryForDisplay = useSelector(selectMemoryForDisplay)
 
 
     /*************************************************************
@@ -30,7 +26,6 @@ function Memories() {
     const dispatch = useDispatch()
 
     const _getMemories = useCallback(() => dispatch(getMemories()), [dispatch])
-    const _setMemoryForDisplay = (data) => dispatch(setMemoryForDisplay(data))
 
     /*************************************************************
      * hooks
@@ -41,11 +36,6 @@ function Memories() {
         }
     }, [status, _getMemories])
 
-
-    /*************************************************************
-     * handlers
-     *************************************************************/
-    const handleModalClose = () => _setMemoryForDisplay(null)
 
     return (
         <>
@@ -65,12 +55,6 @@ function Memories() {
                     </Styles.Container>
                 </Styles.Root>
             </AnimatedPage>
-
-            {/* { memoryForDisplay && (
-                <TransitionsModal open={memoryForDisplay !== null} handleClose={handleModalClose}>
-                    <MemoryForDisplay { ...memoryForDisplay } />
-                </TransitionsModal>
-            )} */}
         </>
     )
 }
