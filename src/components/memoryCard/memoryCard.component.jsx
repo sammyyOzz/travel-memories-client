@@ -24,7 +24,11 @@ export function MemoryCard({ _id, title, imageUrl, experience, isPublic, authori
     const _setMemoryForDisplay = (data) => dispatch(setMemoryForDisplay(data))
 
     const handleClick = () => {
-        _setMemoryForDisplay({ _id, title, imageUrl, experience, user })
+        if (!isAuthorized) {
+            navigate(`/payment/${_id}`)
+            return
+        }
+        _setMemoryForDisplay({ _id, title, imageUrl, experience, isPublic, authorized, user })
         navigate(`/view-memory/${_id}`)
     }
 

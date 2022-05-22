@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { selectLoggedInUser } from '../../redux/auth/auth.selectors';
 import { Button } from '../button/button.component';
 import * as Styles from './navbar.styles'
@@ -9,7 +9,6 @@ import { logout } from '../../redux/auth/auth.slice';
 
 
 export function Navbar() {
-    const { pathname } = useLocation()
     const navigate = useNavigate()
 
     const { data: userData } = useSelector(selectLoggedInUser)
@@ -40,7 +39,7 @@ export function Navbar() {
             { userData?._id && (
                 <ClickAwayListener onClickAway={hideLogoutButton}>
                     <Styles.NameContainer>
-                        <Styles.Name data-testid="user-logged-in" onClick={showLogoutButton}>{ `Hi, ${userData.name}` }</Styles.Name>
+                        <Styles.Name data-testid="user-logged-in" onClick={showLogoutButton}>{ `Hi, ${userData.name.split(' ')[0]}` }</Styles.Name>
                         { logoutButtonIsVisible && (
                             <Button data-testid="logout-button" onClick={handleLogout} className="navbar-logout-button">Logout</Button>
                         )}
