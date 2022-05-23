@@ -36,7 +36,7 @@ export function MemoryCard({ _id, title, imageUrl, experience, isPublic, authori
     }
 
     return (
-        <Styles.Root onClick={handleClick}>
+        <Styles.Root onClick={handleClick} data-testid="card">
             <Styles.ImageContainer>
                 <Styles.Image src={isAuthorized ? validImageUrl : lockedImage} alt="" />
             </Styles.ImageContainer>
