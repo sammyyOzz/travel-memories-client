@@ -96,6 +96,7 @@ export function Chat({ title }) {
                         placeholder="Type a message..."
                         value={newMessage}
                         onChange={e => setNewMessage(e.target.value)}
+                        data-testid="input"
                     />
                 </Form>
             </Styles.InputContainer>

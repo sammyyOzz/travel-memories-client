@@ -1,0 +1,438 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stripe should match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        style="opacity: 0;"
+      >
+        <div
+          class="sc-bjUoiL iFzdBW"
+        >
+          <div
+            class="sc-dIouRR hdbAQx"
+          >
+            <div
+              class="sc-gsnTZi bzOLQz"
+            >
+              <a
+                href="/"
+              >
+                <div
+                  class="sc-dkzDqf iMJNkf"
+                >
+                  Memories
+                </div>
+              </a>
+            </div>
+            <div
+              class="sc-hHLeRK eoPnfp"
+            >
+              <div
+                class="sc-idiyUo kpQEEf"
+              >
+                <div
+                  class="sc-kgflAQ guZMjO"
+                >
+                  <div
+                    class="sc-fLlhyt dkHkuO"
+                  >
+                    <h1
+                      class="sc-bBrHrO cyERtU"
+                    >
+                      Payment
+                    </h1>
+                    <p
+                      class="sc-cxabCf ecvEWC"
+                    >
+                      To have access to this private content and discussion, you will pay a fee of 
+                      <strong>
+                        $20
+                      </strong>
+                      , fill in your card details below to proceed.
+                    </p>
+                    <p
+                      class="sc-cxabCf ecvEWC"
+                    />
+                    <form
+                      class="sc-kDDrLX ijrznI"
+                      data-testid="form"
+                    >
+                      <div />
+                      <button
+                        class="sc-bczRLJ ksTqKx"
+                        data-testid="submit-button"
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-dmRaPn fjVCnU"
+          >
+            <div
+              class="sc-idiyUo kpQEEf"
+            >
+              <div
+                class="sc-ksZaOG SOwdT"
+              >
+                <h2
+                  class="sc-hAZoDl dEElIC"
+                >
+                  Post New Memories
+                </h2>
+                <form
+                  class="sc-kDDrLX ijrznI"
+                  data-testid="form"
+                  enctype="multipart/form-data"
+                >
+                  <div
+                    class="sc-gKXOVf bBUJMz"
+                  >
+                    <label
+                      class="sc-iBkjds hprBVU"
+                      for="title"
+                    >
+                      Title
+                    </label>
+                    <input
+                      class="sc-ftvSup kdiwBa"
+                      data-testid="form-control-input"
+                      id="title"
+                      name="title"
+                      required=""
+                      value=""
+                    />
+                    <p
+                      class="sc-jqUVSM bCAElf"
+                    />
+                  </div>
+                  <div
+                    class="sc-gKXOVf bBUJMz"
+                  >
+                    <label
+                      class="sc-iBkjds hprBVU"
+                      for="experience"
+                    >
+                      Experience
+                    </label>
+                    <textarea
+                      class="sc-papXJ AZnbJ"
+                      data-testid="form-control-textarea"
+                      id="experience"
+                      name="experience"
+                      required=""
+                    />
+                    <p
+                      class="sc-jqUVSM bCAElf"
+                    />
+                  </div>
+                  <input
+                    accept=".png, .jpg, .jpeg"
+                    style="display: none;"
+                    type="file"
+                  />
+                  <button
+                    class="sc-bczRLJ eTivPV"
+                    type="button"
+                  >
+                    Upload Image
+                  </button>
+                  <div
+                    class="sc-iqcoie ivfCfz"
+                  >
+                    <img
+                      alt=""
+                      class="sc-breuTD eDFbfx"
+                      src="selected.png"
+                    />
+                    <div
+                      class="sc-evZas TqCyk"
+                    >
+                      Public
+                    </div>
+                  </div>
+                  <p
+                    class="sc-fEOsli cHCakp"
+                  >
+                    This post will be made available to everyone.
+                  </p>
+                  <div
+                    class="sc-iqcoie fPLphA"
+                  >
+                    <div
+                      class="sc-crXcEl caoEjK"
+                    />
+                    <div
+                      class="sc-evZas TqCyk"
+                    >
+                      Private
+                    </div>
+                  </div>
+                  <p
+                    class="sc-fEOsli cHCakp"
+                  >
+                    Be informed, anyone who pays to view this post will have access to it.
+                  </p>
+                  <button
+                    class="sc-bczRLJ ksTqKx"
+                    type="submit"
+                  >
+                    Save Memory
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      style="opacity: 0;"
+    >
+      <div
+        class="sc-bjUoiL iFzdBW"
+      >
+        <div
+          class="sc-dIouRR hdbAQx"
+        >
+          <div
+            class="sc-gsnTZi bzOLQz"
+          >
+            <a
+              href="/"
+            >
+              <div
+                class="sc-dkzDqf iMJNkf"
+              >
+                Memories
+              </div>
+            </a>
+          </div>
+          <div
+            class="sc-hHLeRK eoPnfp"
+          >
+            <div
+              class="sc-idiyUo kpQEEf"
+            >
+              <div
+                class="sc-kgflAQ guZMjO"
+              >
+                <div
+                  class="sc-fLlhyt dkHkuO"
+                >
+                  <h1
+                    class="sc-bBrHrO cyERtU"
+                  >
+                    Payment
+                  </h1>
+                  <p
+                    class="sc-cxabCf ecvEWC"
+                  >
+                    To have access to this private content and discussion, you will pay a fee of 
+                    <strong>
+                      $20
+                    </strong>
+                    , fill in your card details below to proceed.
+                  </p>
+                  <p
+                    class="sc-cxabCf ecvEWC"
+                  />
+                  <form
+                    class="sc-kDDrLX ijrznI"
+                    data-testid="form"
+                  >
+                    <div />
+                    <button
+                      class="sc-bczRLJ ksTqKx"
+                      data-testid="submit-button"
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-dmRaPn fjVCnU"
+        >
+          <div
+            class="sc-idiyUo kpQEEf"
+          >
+            <div
+              class="sc-ksZaOG SOwdT"
+            >
+              <h2
+                class="sc-hAZoDl dEElIC"
+              >
+                Post New Memories
+              </h2>
+              <form
+                class="sc-kDDrLX ijrznI"
+                data-testid="form"
+                enctype="multipart/form-data"
+              >
+                <div
+                  class="sc-gKXOVf bBUJMz"
+                >
+                  <label
+                    class="sc-iBkjds hprBVU"
+                    for="title"
+                  >
+                    Title
+                  </label>
+                  <input
+                    class="sc-ftvSup kdiwBa"
+                    data-testid="form-control-input"
+                    id="title"
+                    name="title"
+                    required=""
+                    value=""
+                  />
+                  <p
+                    class="sc-jqUVSM bCAElf"
+                  />
+                </div>
+                <div
+                  class="sc-gKXOVf bBUJMz"
+                >
+                  <label
+                    class="sc-iBkjds hprBVU"
+                    for="experience"
+                  >
+                    Experience
+                  </label>
+                  <textarea
+                    class="sc-papXJ AZnbJ"
+                    data-testid="form-control-textarea"
+                    id="experience"
+                    name="experience"
+                    required=""
+                  />
+                  <p
+                    class="sc-jqUVSM bCAElf"
+                  />
+                </div>
+                <input
+                  accept=".png, .jpg, .jpeg"
+                  style="display: none;"
+                  type="file"
+                />
+                <button
+                  class="sc-bczRLJ eTivPV"
+                  type="button"
+                >
+                  Upload Image
+                </button>
+                <div
+                  class="sc-iqcoie ivfCfz"
+                >
+                  <img
+                    alt=""
+                    class="sc-breuTD eDFbfx"
+                    src="selected.png"
+                  />
+                  <div
+                    class="sc-evZas TqCyk"
+                  >
+                    Public
+                  </div>
+                </div>
+                <p
+                  class="sc-fEOsli cHCakp"
+                >
+                  This post will be made available to everyone.
+                </p>
+                <div
+                  class="sc-iqcoie fPLphA"
+                >
+                  <div
+                    class="sc-crXcEl caoEjK"
+                  />
+                  <div
+                    class="sc-evZas TqCyk"
+                  >
+                    Private
+                  </div>
+                </div>
+                <p
+                  class="sc-fEOsli cHCakp"
+                >
+                  Be informed, anyone who pays to view this post will have access to it.
+                </p>
+                <button
+                  class="sc-bczRLJ ksTqKx"
+                  type="submit"
+                >
+                  Save Memory
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -1,7 +1,6 @@
 import React from 'react'
 import * as Styles from './viewMemory.styles'
 import { useSelector } from 'react-redux'
-import { AnimatedPage } from '../../components/animation/animatedPage.component'
 import { selectMemoryForDisplay } from '../../redux/memories/memories.selectors'
 import { MemoryCard } from '../../components/memoryCard/memoryCard.component'
 import { Chat } from '../../components/chat/chat.component'

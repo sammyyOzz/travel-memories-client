@@ -72,7 +72,7 @@ export function CheckoutForm() {
       <Form handleSubmit={handleSubmit}>
         <CardElement options={{ style: { base: { color: '#fff' }} }} />
 
-        <Button fullWidth loading={loading}>Submit</Button>
+        <Button fullWidth loading={loading} data-testid="submit-button">Submit</Button>
       </Form>
     </>
   );

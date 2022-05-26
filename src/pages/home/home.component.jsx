@@ -44,7 +44,7 @@ function Home() {
 
                 { !userData?._id && (
                     <Link to="/auth">
-                        <Button>Log into your account</Button>
+                        <Button data-testid="login-button">Log into your account</Button>
                     </Link>
                 )}
             </Styles.Banner>

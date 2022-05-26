@@ -1,0 +1,662 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ViewMemory> should match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        style="opacity: 0;"
+      >
+        <div
+          class="sc-cCsOjp hmSTjj"
+        >
+          <div
+            class="sc-jdAMXn hbKuHi"
+          >
+            <div
+              class="sc-iIPllB dHghlY"
+            >
+              <a
+                href="/"
+              >
+                <div
+                  class="sc-gicCDI fJPQKi"
+                >
+                  Memories
+                </div>
+              </a>
+            </div>
+            <div
+              class="sc-bZnhIo fFQamB"
+            >
+              <div
+                class="sc-ciZhAO jDwQrK"
+              >
+                <div
+                  class="sc-bczRLJ bvPmUY"
+                >
+                  <div
+                    class="sc-dkzDqf ewJqrQ"
+                  >
+                    <div
+                      class="sc-hKMtZM ebQWck"
+                    >
+                      <h1
+                        class="sc-gsnTZi fvtrSN"
+                      />
+                      <div
+                        class="sc-jSMfEi dJFpZf"
+                        data-testid="card"
+                      >
+                        <div
+                          class="sc-gKXOVf bndSUp"
+                        >
+                          <img
+                            alt=""
+                            class="sc-iBkjds lmbScV"
+                            src="https://media.istockphoto.com/photos/padlock-picture-id1156910737?b=1&k=20&m=1156910737&s=170667a&w=0&h=ki-uA7qQnB_NO3VSHvnHGNfhh0JN7z3sVNVgQwPriUA="
+                          />
+                        </div>
+                        <h2
+                          class="sc-ftvSup gpYeFb"
+                        >
+                          PRIVATE
+                        </h2>
+                        <div
+                          class="sc-papXJ linmSP"
+                        >
+                          You do not have access to this private content
+                        </div>
+                        <div
+                          class="sc-jqUVSM jfVill"
+                        >
+                          --John Doe--
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-eCYdqJ kouEsf"
+                  >
+                    <div
+                      class="sc-kDDrLX gNFEAq"
+                    >
+                      <div
+                        class="sc-iqcoie bqCKLq"
+                      >
+                        <h2 />
+                      </div>
+                      <div
+                        class="sc-crXcEl iwEmYN"
+                      >
+                        <p>
+                          <span
+                            aria-busy="true"
+                            aria-live="polite"
+                          >
+                            <span
+                              class="react-loading-skeleton"
+                              style="margin-bottom: 20px; border-radius: 10px; width: 40%; height: 30px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                            >
+                              ‌
+                            </span>
+                            <br />
+                          </span>
+                        </p>
+                        <p>
+                          <span
+                            aria-busy="true"
+                            aria-live="polite"
+                          >
+                            <span
+                              class="react-loading-skeleton"
+                              style="margin-bottom: 20px; border-radius: 10px; width: 40%; height: 30px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                            >
+                              ‌
+                            </span>
+                            <br />
+                          </span>
+                        </p>
+                        <p>
+                          <span
+                            aria-busy="true"
+                            aria-live="polite"
+                          >
+                            <span
+                              class="react-loading-skeleton"
+                              style="margin-bottom: 20px; border-radius: 10px; width: 60%; height: 40px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                            >
+                              ‌
+                            </span>
+                            <br />
+                          </span>
+                        </p>
+                        <p>
+                          <span
+                            aria-busy="true"
+                            aria-live="polite"
+                          >
+                            <span
+                              class="react-loading-skeleton"
+                              style="margin-bottom: 20px; border-radius: 10px; width: 60%; height: 40px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                            >
+                              ‌
+                            </span>
+                            <br />
+                          </span>
+                        </p>
+                        <p>
+                          <span
+                            aria-busy="true"
+                            aria-live="polite"
+                          >
+                            <span
+                              class="react-loading-skeleton"
+                              style="margin-bottom: 20px; border-radius: 10px; width: 50%; height: 30px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                            >
+                              ‌
+                            </span>
+                            <br />
+                          </span>
+                        </p>
+                        <div
+                          id="dummy"
+                        />
+                      </div>
+                      <div
+                        class="sc-evZas cJGvmQ"
+                      >
+                        <form
+                          class="sc-fLlhyt fXwAwG"
+                          data-testid="form"
+                        >
+                          <input
+                            class="sc-breuTD kTnIvS"
+                            data-testid="input"
+                            placeholder="Type a message..."
+                            value=""
+                          />
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-iTONeN jJLMGb"
+          >
+            <div
+              class="sc-ciZhAO kKcnJG"
+            >
+              <div
+                class="sc-ikZpkk cXbBsY"
+              >
+                <h2
+                  class="sc-jIZahH jBYUmO"
+                >
+                  Post New Memories
+                </h2>
+                <form
+                  class="sc-fLlhyt fXwAwG"
+                  data-testid="form"
+                  enctype="multipart/form-data"
+                >
+                  <div
+                    class="sc-idiyUo dWOcYL"
+                  >
+                    <label
+                      class="sc-dIouRR kBQLVK"
+                      for="title"
+                    >
+                      Title
+                    </label>
+                    <input
+                      class="sc-hHLeRK eRiDkg"
+                      data-testid="form-control-input"
+                      id="title"
+                      name="title"
+                      required=""
+                      value=""
+                    />
+                    <p
+                      class="sc-kgflAQ fDjHSX"
+                    />
+                  </div>
+                  <div
+                    class="sc-idiyUo dWOcYL"
+                  >
+                    <label
+                      class="sc-dIouRR kBQLVK"
+                      for="experience"
+                    >
+                      Experience
+                    </label>
+                    <textarea
+                      class="sc-dmRaPn eAxxMi"
+                      data-testid="form-control-textarea"
+                      id="experience"
+                      name="experience"
+                      required=""
+                    />
+                    <p
+                      class="sc-kgflAQ fDjHSX"
+                    />
+                  </div>
+                  <input
+                    accept=".png, .jpg, .jpeg"
+                    style="display: none;"
+                    type="file"
+                  />
+                  <button
+                    class="sc-bjUoiL ivBSsd"
+                    type="button"
+                  >
+                    Upload Image
+                  </button>
+                  <div
+                    class="sc-bBrHrO KTzNM"
+                  >
+                    <img
+                      alt=""
+                      class="sc-llJcti hGIvWF"
+                      src="selected.png"
+                    />
+                    <div
+                      class="sc-cxabCf kVwPhW"
+                    >
+                      Public
+                    </div>
+                  </div>
+                  <p
+                    class="sc-gXmSlM cdrFBH"
+                  >
+                    This post will be made available to everyone.
+                  </p>
+                  <div
+                    class="sc-bBrHrO fhQMdn"
+                  >
+                    <div
+                      class="sc-ivTmOn fGeDtW"
+                    />
+                    <div
+                      class="sc-cxabCf kVwPhW"
+                    >
+                      Private
+                    </div>
+                  </div>
+                  <p
+                    class="sc-gXmSlM cdrFBH"
+                  >
+                    Be informed, anyone who pays to view this post will have access to it.
+                  </p>
+                  <button
+                    class="sc-bjUoiL cjloPR"
+                    type="submit"
+                  >
+                    Save Memory
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      style="opacity: 0;"
+    >
+      <div
+        class="sc-cCsOjp hmSTjj"
+      >
+        <div
+          class="sc-jdAMXn hbKuHi"
+        >
+          <div
+            class="sc-iIPllB dHghlY"
+          >
+            <a
+              href="/"
+            >
+              <div
+                class="sc-gicCDI fJPQKi"
+              >
+                Memories
+              </div>
+            </a>
+          </div>
+          <div
+            class="sc-bZnhIo fFQamB"
+          >
+            <div
+              class="sc-ciZhAO jDwQrK"
+            >
+              <div
+                class="sc-bczRLJ bvPmUY"
+              >
+                <div
+                  class="sc-dkzDqf ewJqrQ"
+                >
+                  <div
+                    class="sc-hKMtZM ebQWck"
+                  >
+                    <h1
+                      class="sc-gsnTZi fvtrSN"
+                    />
+                    <div
+                      class="sc-jSMfEi dJFpZf"
+                      data-testid="card"
+                    >
+                      <div
+                        class="sc-gKXOVf bndSUp"
+                      >
+                        <img
+                          alt=""
+                          class="sc-iBkjds lmbScV"
+                          src="https://media.istockphoto.com/photos/padlock-picture-id1156910737?b=1&k=20&m=1156910737&s=170667a&w=0&h=ki-uA7qQnB_NO3VSHvnHGNfhh0JN7z3sVNVgQwPriUA="
+                        />
+                      </div>
+                      <h2
+                        class="sc-ftvSup gpYeFb"
+                      >
+                        PRIVATE
+                      </h2>
+                      <div
+                        class="sc-papXJ linmSP"
+                      >
+                        You do not have access to this private content
+                      </div>
+                      <div
+                        class="sc-jqUVSM jfVill"
+                      >
+                        --John Doe--
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="sc-eCYdqJ kouEsf"
+                >
+                  <div
+                    class="sc-kDDrLX gNFEAq"
+                  >
+                    <div
+                      class="sc-iqcoie bqCKLq"
+                    >
+                      <h2 />
+                    </div>
+                    <div
+                      class="sc-crXcEl iwEmYN"
+                    >
+                      <p>
+                        <span
+                          aria-busy="true"
+                          aria-live="polite"
+                        >
+                          <span
+                            class="react-loading-skeleton"
+                            style="margin-bottom: 20px; border-radius: 10px; width: 40%; height: 30px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                          >
+                            ‌
+                          </span>
+                          <br />
+                        </span>
+                      </p>
+                      <p>
+                        <span
+                          aria-busy="true"
+                          aria-live="polite"
+                        >
+                          <span
+                            class="react-loading-skeleton"
+                            style="margin-bottom: 20px; border-radius: 10px; width: 40%; height: 30px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                          >
+                            ‌
+                          </span>
+                          <br />
+                        </span>
+                      </p>
+                      <p>
+                        <span
+                          aria-busy="true"
+                          aria-live="polite"
+                        >
+                          <span
+                            class="react-loading-skeleton"
+                            style="margin-bottom: 20px; border-radius: 10px; width: 60%; height: 40px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                          >
+                            ‌
+                          </span>
+                          <br />
+                        </span>
+                      </p>
+                      <p>
+                        <span
+                          aria-busy="true"
+                          aria-live="polite"
+                        >
+                          <span
+                            class="react-loading-skeleton"
+                            style="margin-bottom: 20px; border-radius: 10px; width: 60%; height: 40px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                          >
+                            ‌
+                          </span>
+                          <br />
+                        </span>
+                      </p>
+                      <p>
+                        <span
+                          aria-busy="true"
+                          aria-live="polite"
+                        >
+                          <span
+                            class="react-loading-skeleton"
+                            style="margin-bottom: 20px; border-radius: 10px; width: 50%; height: 30px; --base-color: #d4d1d1; --highlight-color: #b3b6b6;"
+                          >
+                            ‌
+                          </span>
+                          <br />
+                        </span>
+                      </p>
+                      <div
+                        id="dummy"
+                      />
+                    </div>
+                    <div
+                      class="sc-evZas cJGvmQ"
+                    >
+                      <form
+                        class="sc-fLlhyt fXwAwG"
+                        data-testid="form"
+                      >
+                        <input
+                          class="sc-breuTD kTnIvS"
+                          data-testid="input"
+                          placeholder="Type a message..."
+                          value=""
+                        />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-iTONeN jJLMGb"
+        >
+          <div
+            class="sc-ciZhAO kKcnJG"
+          >
+            <div
+              class="sc-ikZpkk cXbBsY"
+            >
+              <h2
+                class="sc-jIZahH jBYUmO"
+              >
+                Post New Memories
+              </h2>
+              <form
+                class="sc-fLlhyt fXwAwG"
+                data-testid="form"
+                enctype="multipart/form-data"
+              >
+                <div
+                  class="sc-idiyUo dWOcYL"
+                >
+                  <label
+                    class="sc-dIouRR kBQLVK"
+                    for="title"
+                  >
+                    Title
+                  </label>
+                  <input
+                    class="sc-hHLeRK eRiDkg"
+                    data-testid="form-control-input"
+                    id="title"
+                    name="title"
+                    required=""
+                    value=""
+                  />
+                  <p
+                    class="sc-kgflAQ fDjHSX"
+                  />
+                </div>
+                <div
+                  class="sc-idiyUo dWOcYL"
+                >
+                  <label
+                    class="sc-dIouRR kBQLVK"
+                    for="experience"
+                  >
+                    Experience
+                  </label>
+                  <textarea
+                    class="sc-dmRaPn eAxxMi"
+                    data-testid="form-control-textarea"
+                    id="experience"
+                    name="experience"
+                    required=""
+                  />
+                  <p
+                    class="sc-kgflAQ fDjHSX"
+                  />
+                </div>
+                <input
+                  accept=".png, .jpg, .jpeg"
+                  style="display: none;"
+                  type="file"
+                />
+                <button
+                  class="sc-bjUoiL ivBSsd"
+                  type="button"
+                >
+                  Upload Image
+                </button>
+                <div
+                  class="sc-bBrHrO KTzNM"
+                >
+                  <img
+                    alt=""
+                    class="sc-llJcti hGIvWF"
+                    src="selected.png"
+                  />
+                  <div
+                    class="sc-cxabCf kVwPhW"
+                  >
+                    Public
+                  </div>
+                </div>
+                <p
+                  class="sc-gXmSlM cdrFBH"
+                >
+                  This post will be made available to everyone.
+                </p>
+                <div
+                  class="sc-bBrHrO fhQMdn"
+                >
+                  <div
+                    class="sc-ivTmOn fGeDtW"
+                  />
+                  <div
+                    class="sc-cxabCf kVwPhW"
+                  >
+                    Private
+                  </div>
+                </div>
+                <p
+                  class="sc-gXmSlM cdrFBH"
+                >
+                  Be informed, anyone who pays to view this post will have access to it.
+                </p>
+                <button
+                  class="sc-bjUoiL cjloPR"
+                  type="submit"
+                >
+                  Save Memory
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

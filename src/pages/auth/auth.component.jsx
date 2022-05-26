@@ -12,7 +12,6 @@ import { selectLoggedInUser } from '../../redux/auth/auth.selectors'
 import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
 
 import { useNavigate } from 'react-router-dom'
-import { AnimatedPage } from '../../components/animation/animatedPage.component'
 import { Layout } from '../../components/layout/layout.component'
  
 
