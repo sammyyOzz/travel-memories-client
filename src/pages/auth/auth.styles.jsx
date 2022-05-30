@@ -51,4 +51,5 @@ export const Error = styled.p`
 
 export const Message = styled.p`
     font-size: 14px;
+    color: white;
 `
