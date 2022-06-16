@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import * as Styles from './auth.styles'
 
 import { Form, FormControl } from '../../components/form/form.component'
@@ -13,6 +13,7 @@ import { HTTP_STATUS } from '../../utils/constants/httpStatus.constant'
 
 import { useNavigate } from 'react-router-dom'
 import { Layout } from '../../components/layout/layout.component'
+import { LoginWithGoogle } from '../../components/loginWithGoogle/loginWithGoogle.component'
  
 
 function Auth() {
@@ -41,8 +42,8 @@ function Auth() {
      ***********************************************************************/
     const dispatch = useDispatch()
 
-    const _loginUser = userData => dispatch(loginUser(userData)).unwrap().then(() => navigate('/'))
-    const _signupUser = userData => dispatch(signupUser(userData)).unwrap().then(() => navigate('/'))
+    const _loginUser = useCallback(userData => dispatch(loginUser(userData)).unwrap().then(() => navigate('/')), [])
+    const _signupUser = useCallback(userData => dispatch(signupUser(userData)).unwrap().then(() => navigate('/')), [])
 
 
     /***********************************************************************
@@ -151,6 +152,7 @@ function Auth() {
                         />)}
                         <Button fullWidth loading={status === HTTP_STATUS.PENDING}>{ isSignup ? 'Sign Up' : 'Login' }</Button>
                     </Form>
+                    <LoginWithGoogle />
                     <Styles.Footer>
                         <Styles.FooterElement onClick={handleSignupToggle}>{ !isSignup ? 'Sign Up' : 'Login' }</Styles.FooterElement>
                         <Styles.FooterElement onClick={() => navigate('/forgot-password')}>Forgot Password?</Styles.FooterElement> 

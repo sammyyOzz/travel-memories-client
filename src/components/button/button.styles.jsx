@@ -14,6 +14,9 @@ export const Root = styled.button`
     transition: 250ms linear all;
     background-color: transparent;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
         background-color: #373e6656;

@@ -1,3 +1,5 @@
-export const userToken = sessionStorage.getItem('memories-user-token')
-export const setUserToken = data => sessionStorage.setItem('memories-user-token', JSON.stringify(data))
-export const removeUserToken = () => sessionStorage.removeItem('memories-user-token')
+const MEMORIES_USER_TOKEN = 'memories-user-token'
+
+export const userToken = sessionStorage.getItem(MEMORIES_USER_TOKEN);
+export const setUserToken = data => sessionStorage.setItem(MEMORIES_USER_TOKEN, JSON.stringify(data))
+export const removeUserToken = () => sessionStorage.removeItem(MEMORIES_USER_TOKEN);

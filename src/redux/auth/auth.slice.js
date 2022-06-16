@@ -13,6 +13,7 @@ export const signupUser = asyncRequest(`${namespace}/signupUser`, '/api/user/sig
 export const getLoggedInUser = asyncRequest(`${namespace}/getLoggedInUser`, '/api/user/getLoggedInUser', 'get')
 export const forgotPassword = asyncRequest(`${namespace}/forgotPassword`, '/api/user/forgotPassword', 'post')
 export const resetPassword = asyncRequest(`${namespace}/resetPassword`, '/api/user/resetPassword', 'post')
+export const loginWithGoogle = asyncRequest(`${namespace}/loginWithGoogle`, '/api/user/loginWithGoogle', 'post')
 
 
 const DEFAULT = { status: null, data: null, error: null }
@@ -31,7 +32,6 @@ const authSlice = createSlice({
         logout(state) {
             state.user = DEFAULT
             removeUserToken()
-            // localStorage.removeItem('memories-user-token')
         }
     },
 
@@ -47,6 +47,10 @@ const authSlice = createSlice({
         [getLoggedInUser.pending]: asyncReducers.authUserPending,
         [getLoggedInUser.fulfilled]: asyncReducers.getLoggedInUserFulfilled,
         [getLoggedInUser.rejected]: asyncReducers.authUserRejected,
+
+        [loginWithGoogle.pending]: asyncReducers.authUserPending,
+        [loginWithGoogle.fulfilled]: asyncReducers.authUserFulfilled,
+        [loginWithGoogle.rejected]: asyncReducers.authUserRejected,
     }
 })
 
