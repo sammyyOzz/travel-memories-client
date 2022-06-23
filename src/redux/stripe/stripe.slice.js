@@ -4,7 +4,7 @@ import { asyncRequest } from '../services'
 
 const namespace = 'stripe'
 
-export const payForPrivateMemory = asyncRequest(`${namespace}/payForPrivateMemory`, '/api/stripe', 'post')
+export const payForPrivateMemory = asyncRequest(`${namespace}/payForPrivateMemory`, (objData) => `/api/stripe/${objData.memoryID}`, 'post')
 
 
 const DEFAULT = { status: null, data: null, error: null }

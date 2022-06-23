@@ -6,7 +6,7 @@ export function Button ({ children, loading, ...props }) {
 
     return (
         <Styles.Root disabled={loading} { ...props }>
-            { !loading ?  children : <CircularProgress size={20} style={{ color: 'white' }} /> }
+            { !loading ?  children : <CircularProgress size={20} style={{ color: 'yellow', fontWeight: 'bold' }} /> }
         </Styles.Root>
     )
 }

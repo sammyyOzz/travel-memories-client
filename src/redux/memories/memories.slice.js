@@ -9,8 +9,8 @@ const namespace = 'memories'
  *************************************************************/
 export const getMemories = asyncRequest(`${namespace}/getMemories`, '/api/memory', 'get')
 export const saveMemory = asyncRequest(`${namespace}/saveMemory`, '/api/memory', 'post')
-export const getMessages = asyncRequest(`${namespace}/getMessages`, '/api/message', 'get')
-export const createMessage = asyncRequest(`${namespace}/createMessage`, '/api/message', 'post')
+export const getMessages = asyncRequest(`${namespace}/getMessages`, (objData) => `/api/message/${objData.id}`, 'get')
+export const createMessage = asyncRequest(`${namespace}/createMessage`, (objData) => `/api/message/${objData.id}`, 'post')
 
 
 

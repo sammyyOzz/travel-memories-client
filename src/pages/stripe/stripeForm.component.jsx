@@ -59,7 +59,7 @@ export function CheckoutForm() {
       //send token to backend here
       const { id } = paymentMethod;
 
-      _payForPrivateMemory({ id, urlParams: `/${memoryID}` })
+      _payForPrivateMemory({ id, memoryID })
 
     } else {
       console.log(error.message);

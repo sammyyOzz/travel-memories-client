@@ -44,7 +44,7 @@ export function Chat({ title }) {
     * hooks
     ***********************************************************************/
     useEffect(() => {
-        _getMessages({ urlParams: `/${roomID}` })
+        _getMessages({ id: roomID })
     }, [])
 
     useEffect(() => {
@@ -75,7 +75,7 @@ export function Chat({ title }) {
         socket.emit('new_message', { room: roomID, messageData })
         setNewMessage('')
 
-        _createMessage({ body: newMessage, urlParams: `/${roomID}` })
+        _createMessage({ id: roomID, body: newMessage })
     }
 
     return (
